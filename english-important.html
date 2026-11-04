@@ -1,535 +1,609 @@
-<!DOCTYPE html>
-<html>
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>English Important Questions</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Important Questions | College Resource Hub</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: #050b1b;
+    color: white;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 22px 12px;
+    background: linear-gradient(120deg, #071a3b, #102d60);
+    border-bottom: 1px solid #00d9ff;
+}
+
+header h1 {
+    color: #00e5ff;
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #c7d9f5;
+    font-size: 14px;
+}
+
+.presentation {
+    width: 92%;
+    max-width: 950px;
+    min-height: 410px;
+    margin: 35px auto 20px;
+    padding: 35px;
+    background: linear-gradient(145deg, #101e3c, #091329);
+    border: 1px solid #087eaf;
+    border-radius: 20px;
+    box-shadow: 0 0 25px #007bff30;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    animation: appear .4s ease;
+}
+
+.slide.active {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide h2 {
+    color: #00e5ff;
+    font-size: 27px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #176b9c;
+    padding-bottom: 12px;
+}
+
+.slide h3 {
+    color: #ffd166;
+    margin: 20px 0 10px;
+    font-size: 19px;
+}
+
+.slide p {
+    color: #e1eaff;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.answer {
+    background: #14294a;
+    border-left: 4px solid #00d9ff;
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 8px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 7px 13px;
+    margin-bottom: 18px;
+    border-radius: 20px;
+    background: #063d5d;
+    color: #00e5ff;
+    font-size: 13px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+button {
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #0077ff, #00c9e8);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #00cfff;
+}
+
+button:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#counter {
+    color: #b9d9ff;
+    font-weight: bold;
+}
+
+.progress-container {
+    width: 92%;
+    max-width: 950px;
+    height: 7px;
+    margin: auto;
+    background: #1b2b48;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #007bff, #00e5ff);
+    transition: .3s;
+}
+
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    color: #91a9ca;
+    font-size: 13px;
+}
+
+@media(max-width:600px) {
+    .presentation {
+        padding: 22px 17px;
+        min-height: 470px;
+    }
+
+    .slide h2 {
+        font-size: 22px;
+    }
+
+    .slide p {
+        font-size: 15px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="english.html">Syllabus</a>
-        <a href="english-notes.html">Notes</a>
-    </nav>
-
-    <!-- HEADER -->
-    <header>
-        <h1>📝 English Important Questions</h1>
-        <p>Important questions for examination</p>
-    </header>
-
-
-    <!-- UNIT 1 -->
-    <section class="resources">
-
-        <h2>📚 Effective Learning Skills</h2>
-
-        <div class="resource-card">
-
-            <h3>Q1. What are Effective Learning Skills?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Effective learning skills are techniques and habits that help
-                a student understand, remember and use information effectively.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q2. Write any five effective learning skills.</h3>
-
-            <p><b>Answer:</b></p>
-
-            <ol>
-                <li>Time Management</li>
-                <li>Concentration</li>
-                <li>Note Making</li>
-                <li>Regular Revision</li>
-                <li>Practice</li>
-            </ol>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q3. Why is time management important for students?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Time management helps students complete their studies on time,
-                reduce stress and maintain a proper balance between study and
-                other activities.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q4. Write some tips for effective learning.</h3>
-
-            <p><b>Answer:</b></p>
-
-            <ul>
-                <li>Set clear goals.</li>
-                <li>Prepare a study timetable.</li>
-                <li>Take short notes.</li>
-                <li>Revise regularly.</li>
-                <li>Practice questions.</li>
-            </ul>
-
-        </div>
-
-    </section>
-
-
-    <!-- LISTENING -->
-    <section class="resources">
-
-        <h2>🎧 Listening Comprehension</h2>
-
-        <div class="resource-card">
-
-            <h3>Q5. What is Listening Comprehension?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Listening comprehension is the ability to listen carefully,
-                understand spoken information and respond correctly.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q6. What are the steps of listening comprehension?</h3>
-
-            <p><b>Answer:</b></p>
-
-            <ol>
-                <li>Listen carefully.</li>
-                <li>Understand the main idea.</li>
-                <li>Identify important information.</li>
-                <li>Remember key details.</li>
-                <li>Answer the questions.</li>
-            </ol>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q7. Why is listening important?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Listening improves communication, concentration, vocabulary
-                and understanding of spoken English.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- NEWSPAPER -->
-    <section class="resources">
-
-        <h2>📰 Newspaper Reading</h2>
-
-        <div class="resource-card">
-
-            <h3>Q8. What is Newspaper Reading?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Newspaper reading is the habit of reading news, articles,
-                headlines and other information published in newspapers.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q9. What are the benefits of newspaper reading?</h3>
-
-            <p><b>Answer:</b></p>
-
-            <ul>
-                <li>Improves vocabulary.</li>
-                <li>Improves reading skills.</li>
-                <li>Increases general knowledge.</li>
-                <li>Improves grammar.</li>
-                <li>Provides information about current events.</li>
-            </ul>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q10. How does newspaper reading improve English?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Newspaper reading exposes us to new words, sentence structures
-                and different styles of writing. Therefore, it improves
-                vocabulary, grammar and reading skills.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- PARTS OF SPEECH -->
-    <section class="resources">
-
-        <h2>🔤 Parts of Speech</h2>
-
-        <div class="resource-card">
-
-            <h3>Q11. What are Parts of Speech?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Parts of speech are categories of words according to their
-                function and use in a sentence.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q12. Name the eight Parts of Speech.</h3>
-
-            <p><b>Answer:</b></p>
-
-            <ol>
-                <li>Noun</li>
-                <li>Pronoun</li>
-                <li>Verb</li>
-                <li>Adjective</li>
-                <li>Adverb</li>
-                <li>Preposition</li>
-                <li>Conjunction</li>
-                <li>Interjection</li>
-            </ol>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q13. What is a Noun? Give an example.</h3>
-
-            <p>
-                <b>Answer:</b>
-                A noun is the name of a person, place, thing or idea.
-                <br><br>
-                <b>Example:</b> Nitin, Delhi, Book, Honesty.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q14. What is a Pronoun? Give an example.</h3>
-
-            <p>
-                <b>Answer:</b>
-                A pronoun is a word used in place of a noun.
-                <br><br>
-                <b>Example:</b> He, She, It, They.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q15. What is an Adjective?</h3>
-
-            <p>
-                <b>Answer:</b>
-                An adjective is a word that describes a noun or pronoun.
-                <br><br>
-                <b>Example:</b> A <b>beautiful</b> flower.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q16. What is an Adverb?</h3>
-
-            <p>
-                <b>Answer:</b>
-                An adverb describes a verb, adjective or another adverb.
-                <br><br>
-                <b>Example:</b> He runs <b>quickly</b>.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q17. What is a Preposition?</h3>
-
-            <p>
-                <b>Answer:</b>
-                A preposition shows the relationship between words.
-                <br><br>
-                <b>Example:</b> in, on, at, under, behind.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q18. What is a Conjunction?</h3>
-
-            <p>
-                <b>Answer:</b>
-                A conjunction joins words, phrases or sentences.
-                <br><br>
-                <b>Example:</b> and, but, or, because.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q19. What is an Interjection?</h3>
-
-            <p>
-                <b>Answer:</b>
-                An interjection expresses sudden feelings or emotions.
-                <br><br>
-                <b>Example:</b> Wow!, Oh!, Hurrah!, Alas!
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- SENTENCE STRUCTURE -->
-    <section class="resources">
-
-        <h2>✍️ Sentence Structure</h2>
-
-        <div class="resource-card">
-
-            <h3>Q20. What is Sentence Structure?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Sentence structure means the arrangement of words in a sentence
-                to express a complete meaning.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q21. What is the basic structure of a sentence?</h3>
-
-            <p>
-                <b>Answer:</b>
-            </p>
-
-            <div class="diagram">
-                Subject + Verb + Object
-                <br><br>
-                Example:
-                <br>
-                Nitin + plays + cricket.
-            </div>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q22. What are the types of sentences?</h3>
-
-            <p><b>Answer:</b></p>
-
-            <ol>
-                <li>Assertive Sentence</li>
-                <li>Interrogative Sentence</li>
-                <li>Imperative Sentence</li>
-                <li>Exclamatory Sentence</li>
-            </ol>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q23. Give examples of different types of sentences.</h3>
-
-            <p>
-                <b>Assertive:</b> I am a student.
-                <br><br>
-
-                <b>Interrogative:</b> Are you a student?
-                <br><br>
-
-                <b>Imperative:</b> Please open the door.
-                <br><br>
-
-                <b>Exclamatory:</b> What a beautiful day!
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- VERB -->
-    <section class="resources">
-
-        <h2>🔵 Verb</h2>
-
-        <div class="resource-card">
-
-            <h3>Q24. What is a Verb?</h3>
-
-            <p>
-                <b>Answer:</b>
-                A verb is a word that shows an action or state of being.
-                <br><br>
-                <b>Examples:</b> Run, Eat, Write, Play, Read.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q25. What is a Main Verb?</h3>
-
-            <p>
-                <b>Answer:</b>
-                A main verb shows the main action of a sentence.
-                <br><br>
-                <b>Example:</b> She <b>plays</b> cricket.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q26. What is a Helping Verb?</h3>
-
-            <p>
-                <b>Answer:</b>
-                A helping verb helps the main verb in a sentence.
-                <br><br>
-                <b>Examples:</b> is, am, are, was, were, has, have, will.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q27. What is a Transitive Verb?</h3>
-
-            <p>
-                <b>Answer:</b>
-                A transitive verb requires an object to complete its meaning.
-                <br><br>
-                <b>Example:</b> He reads <b>a book</b>.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q28. What is an Intransitive Verb?</h3>
-
-            <p>
-                <b>Answer:</b>
-                An intransitive verb does not require an object.
-                <br><br>
-                <b>Example:</b> The baby sleeps.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- QUICK REVISION -->
-    <section class="resources">
-
-        <h2>⚡ Quick Revision Questions</h2>
-
-        <div class="resource-card">
-
-            <ol>
-                <li>Define Effective Learning Skills.</li>
-                <li>What is Listening Comprehension?</li>
-                <li>Write benefits of Newspaper Reading.</li>
-                <li>Define Parts of Speech.</li>
-                <li>Name the eight Parts of Speech.</li>
-                <li>Define Noun and Pronoun.</li>
-                <li>Define Adjective and Adverb.</li>
-                <li>Define Preposition and Conjunction.</li>
-                <li>What is Sentence Structure?</li>
-                <li>What is the basic sentence structure?</li>
-                <li>Name the types of sentences.</li>
-                <li>Define Verb.</li>
-                <li>What is a Main Verb?</li>
-                <li>What is a Helping Verb?</li>
-                <li>Differentiate between Transitive and Intransitive Verbs.</li>
-            </ol>
-
-        </div>
-
-    </section>
-
-
-    <!-- BACK BUTTON -->
-    <section class="resources">
-
-        <a href="index.html">
-            <button>⬅ Back to Home</button>
-        </a>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <p>
-            © 2026 College Resource Hub | Created by Nitin Singh
-        </p>
-
-    </footer>
+<header>
+    <h1>📘 English Important Questions</h1>
+    <p>College Resource Hub | Exam Preparation Presentation</p>
+</header>
+
+<div class="presentation">
+
+<!-- SLIDE 1 -->
+<div class="slide active">
+    <span class="tag">WELCOME</span>
+    <h2>English Examination Preparation</h2>
+    <h3>Important Questions with Answers</h3>
+    <p>Welcome to English Important Questions presentation.</p>
+    <p>Is presentation mein important topics, short answers aur long answers cover kiye gaye hain.</p>
+    <div class="answer">
+        <p>🎯 Learn • Understand • Practice • Succeed</p>
+    </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide">
+    <span class="tag">1 MARK</span>
+    <h2>Effective Learning Skills</h2>
+
+    <h3>Q1. What is learning?</h3>
+    <div class="answer">
+        <p>Learning is the process of gaining knowledge, skills and understanding through study or experience.</p>
+    </div>
+
+    <h3>Q2. What is active learning?</h3>
+    <div class="answer">
+        <p>Active learning means participating in the learning process through discussion, practice and activities.</p>
+    </div>
+
+    <h3>Q3. What is time management?</h3>
+    <div class="answer">
+        <p>Time management is the process of planning and using time effectively.</p>
+    </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide">
+    <span class="tag">2 MARKS</span>
+    <h2>Effective Learning Skills</h2>
+
+    <h3>Q4. Write two benefits of effective learning skills.</h3>
+    <div class="answer">
+        <p>1. They improve understanding and memory.</p>
+        <p>2. They help students manage time and perform better in examinations.</p>
+    </div>
+
+    <h3>Q5. What is the importance of note-making?</h3>
+    <div class="answer">
+        <p>Note-making helps us record important information in a short and organized form. It makes revision easier.</p>
+    </div>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide">
+    <span class="tag">6 MARKS</span>
+    <h2>Effective Learning Skills</h2>
+
+    <h3>Q6. Explain different effective learning skills.</h3>
+    <div class="answer">
+        <p>Effective learning skills help students understand and remember information properly.</p>
+        <p><b>1. Time Management:</b> Planning study time according to priority.</p>
+        <p><b>2. Note-Making:</b> Writing important points in a short form.</p>
+        <p><b>3. Active Listening:</b> Paying attention during lectures.</p>
+        <p><b>4. Reading Skills:</b> Reading carefully to understand information.</p>
+        <p><b>5. Practice:</b> Revising and solving questions regularly.</p>
+        <p><b>6. Self-Assessment:</b> Checking our own learning progress.</p>
+        <p>These skills improve academic performance and confidence.</p>
+    </div>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide">
+    <span class="tag">1 MARK</span>
+    <h2>Listening Comprehension</h2>
+
+    <h3>Q7. What is listening?</h3>
+    <div class="answer">
+        <p>Listening is the process of receiving and understanding spoken messages.</p>
+    </div>
+
+    <h3>Q8. What is active listening?</h3>
+    <div class="answer">
+        <p>Active listening means listening carefully with full attention and understanding.</p>
+    </div>
+
+    <h3>Q9. What is comprehension?</h3>
+    <div class="answer">
+        <p>Comprehension means understanding the meaning of something heard or read.</p>
+    </div>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide">
+    <span class="tag">2 MARKS</span>
+    <h2>Listening Comprehension</h2>
+
+    <h3>Q10. Write two qualities of a good listener.</h3>
+    <div class="answer">
+        <p>1. A good listener pays attention to the speaker.</p>
+        <p>2. A good listener does not interrupt and understands the message carefully.</p>
+    </div>
+
+    <h3>Q11. Why is listening important?</h3>
+    <div class="answer">
+        <p>Listening improves communication, understanding and learning. It also helps avoid misunderstandings.</p>
+    </div>
+</div>
+
+<!-- SLIDE 7 -->
+<div class="slide">
+    <span class="tag">6 MARKS</span>
+    <h2>Listening Comprehension</h2>
+
+    <h3>Q12. Explain the importance of listening skills.</h3>
+    <div class="answer">
+        <p>Listening is an important communication skill. It helps us understand spoken information.</p>
+        <p><b>1. Better Understanding:</b> It helps us understand the speaker's message.</p>
+        <p><b>2. Better Communication:</b> It improves interaction with others.</p>
+        <p><b>3. Learning:</b> Students learn through lectures and discussions.</p>
+        <p><b>4. Relationships:</b> It builds trust and respect.</p>
+        <p><b>5. Fewer Mistakes:</b> Careful listening reduces misunderstandings.</p>
+        <p><b>6. Problem Solving:</b> It helps us understand problems before responding.</p>
+    </div>
+</div>
+
+<!-- SLIDE 8 -->
+<div class="slide">
+    <span class="tag">1 MARK</span>
+    <h2>Newspaper Reading</h2>
+
+    <h3>Q13. What is a newspaper?</h3>
+    <div class="answer">
+        <p>A newspaper is a printed or digital publication that provides news and information.</p>
+    </div>
+
+    <h3>Q14. What is a headline?</h3>
+    <div class="answer">
+        <p>A headline is the title of a news article that tells its main topic.</p>
+    </div>
+
+    <h3>Q15. What is an editorial?</h3>
+    <div class="answer">
+        <p>An editorial is an article that expresses an opinion on an important issue.</p>
+    </div>
+</div>
+
+<!-- SLIDE 9 -->
+<div class="slide">
+    <span class="tag">2 MARKS</span>
+    <h2>Newspaper Reading</h2>
+
+    <h3>Q16. Write two benefits of reading newspapers.</h3>
+    <div class="answer">
+        <p>1. It increases general knowledge and awareness.</p>
+        <p>2. It improves vocabulary and reading skills.</p>
+    </div>
+
+    <h3>Q17. What is the difference between news and an editorial?</h3>
+    <div class="answer">
+        <p>News reports facts about events, while an editorial presents opinions and views about an issue.</p>
+    </div>
+</div>
+
+<!-- SLIDE 10 -->
+<div class="slide">
+    <span class="tag">6 MARKS</span>
+    <h2>Newspaper Reading</h2>
+
+    <h3>Q18. Explain the importance of newspaper reading.</h3>
+    <div class="answer">
+        <p>Newspaper reading is a useful habit for students and other people.</p>
+        <p><b>1. General Knowledge:</b> It provides information about the world.</p>
+        <p><b>2. Vocabulary:</b> It introduces new words.</p>
+        <p><b>3. Language Skills:</b> It improves reading and writing.</p>
+        <p><b>4. Current Affairs:</b> It keeps us updated about recent events.</p>
+        <p><b>5. Critical Thinking:</b> It helps us understand different viewpoints.</p>
+        <p><b>6. Awareness:</b> It increases knowledge about society and the country.</p>
+    </div>
+</div>
+
+<!-- SLIDE 11 -->
+<div class="slide">
+    <span class="tag">1 MARK</span>
+    <h2>Parts of Speech</h2>
+
+    <h3>Q19. What is a noun?</h3>
+    <div class="answer">
+        <p>A noun is the name of a person, place, animal or thing.</p>
+        <p>Example: Ram, Delhi, Book.</p>
+    </div>
+
+    <h3>Q20. What is a pronoun?</h3>
+    <div class="answer">
+        <p>A pronoun is a word used instead of a noun.</p>
+        <p>Example: He, She, They.</p>
+    </div>
+
+    <h3>Q21. What is a verb?</h3>
+    <div class="answer">
+        <p>A verb is a word that expresses an action or state.</p>
+        <p>Example: Run, Eat, Is.</p>
+    </div>
+</div>
+
+<!-- SLIDE 12 -->
+<div class="slide">
+    <span class="tag">2 MARKS</span>
+    <h2>Parts of Speech</h2>
+
+    <h3>Q22. Name the eight parts of speech.</h3>
+    <div class="answer">
+        <p>1. Noun</p>
+        <p>2. Pronoun</p>
+        <p>3. Verb</p>
+        <p>4. Adjective</p>
+        <p>5. Adverb</p>
+        <p>6. Preposition</p>
+        <p>7. Conjunction</p>
+        <p>8. Interjection</p>
+    </div>
+</div>
+
+<!-- SLIDE 13 -->
+<div class="slide">
+    <span class="tag">6 MARKS</span>
+    <h2>Parts of Speech</h2>
+
+    <h3>Q23. Explain the eight parts of speech with examples.</h3>
+    <div class="answer">
+        <p><b>1. Noun:</b> Name of a person, place or thing. Example: Boy.</p>
+        <p><b>2. Pronoun:</b> Used instead of a noun. Example: He.</p>
+        <p><b>3. Verb:</b> Shows action or state. Example: Play.</p>
+        <p><b>4. Adjective:</b> Describes a noun. Example: Beautiful.</p>
+        <p><b>5. Adverb:</b> Describes a verb or adjective. Example: Slowly.</p>
+        <p><b>6. Preposition:</b> Shows relation. Example: In, On, At.</p>
+        <p><b>7. Conjunction:</b> Joins words or sentences. Example: And, But.</p>
+        <p><b>8. Interjection:</b> Expresses sudden feeling. Example: Wow!</p>
+    </div>
+</div>
+
+<!-- SLIDE 14 -->
+<div class="slide">
+    <span class="tag">1 MARK</span>
+    <h2>Sentence Structure</h2>
+
+    <h3>Q24. What is a sentence?</h3>
+    <div class="answer">
+        <p>A sentence is a group of words that expresses a complete thought.</p>
+    </div>
+
+    <h3>Q25. What is a subject?</h3>
+    <div class="answer">
+        <p>The subject is the person or thing about which something is said.</p>
+    </div>
+
+    <h3>Q26. What is a predicate?</h3>
+    <div class="answer">
+        <p>The predicate tells something about the subject.</p>
+    </div>
+</div>
+
+<!-- SLIDE 15 -->
+<div class="slide">
+    <span class="tag">2 MARKS</span>
+    <h2>Sentence Structure</h2>
+
+    <h3>Q27. What are the main parts of a sentence?</h3>
+    <div class="answer">
+        <p>The two main parts of a sentence are:</p>
+        <p>1. Subject</p>
+        <p>2. Predicate</p>
+        <p>Example: Ram plays cricket.</p>
+        <p>Ram = Subject; plays cricket = Predicate.</p>
+    </div>
+</div>
+
+<!-- SLIDE 16 -->
+<div class="slide">
+    <span class="tag">6 MARKS</span>
+    <h2>Sentence Structure</h2>
+
+    <h3>Q28. Explain the types of sentences with examples.</h3>
+    <div class="answer">
+        <p><b>1. Assertive Sentence:</b> Makes a statement. Example: I am a student.</p>
+        <p><b>2. Interrogative Sentence:</b> Asks a question. Example: Are you ready?</p>
+        <p><b>3. Imperative Sentence:</b> Gives a command or request. Example: Please sit down.</p>
+        <p><b>4. Exclamatory Sentence:</b> Expresses strong feelings. Example: What a beautiful day!</p>
+        <p><b>5. Optative Sentence:</b> Expresses a wish or prayer. Example: May you succeed!</p>
+    </div>
+</div>
+
+<!-- SLIDE 17 -->
+<div class="slide">
+    <span class="tag">VERB</span>
+    <h2>Verb and Its Types</h2>
+
+    <h3>Q29. What are the main types of verbs?</h3>
+    <div class="answer">
+        <p><b>1. Main Verb:</b> Shows the main action. Example: She writes.</p>
+        <p><b>2. Helping Verb:</b> Helps the main verb. Example: is, am, are.</p>
+        <p><b>3. Transitive Verb:</b> Needs an object. Example: He eats an apple.</p>
+        <p><b>4. Intransitive Verb:</b> Does not need an object. Example: Birds fly.</p>
+    </div>
+</div>
+
+<!-- SLIDE 18 -->
+<div class="slide">
+    <span class="tag">PRACTICE</span>
+    <h2>Quick Revision Questions</h2>
+
+    <h3>Answer these questions yourself:</h3>
+    <div class="answer">
+        <p>1. Define communication.</p>
+        <p>2. What is active listening?</p>
+        <p>3. Write two benefits of newspaper reading.</p>
+        <p>4. Define noun with an example.</p>
+        <p>5. What is an adjective?</p>
+        <p>6. Define sentence structure.</p>
+        <p>7. What is a helping verb?</p>
+        <p>8. Explain time management.</p>
+    </div>
+</div>
+
+<!-- SLIDE 19 -->
+<div class="slide">
+    <span class="tag">THANK YOU</span>
+    <h2>Keep Learning, Keep Growing!</h2>
+    <h3>Best Wishes for Your Examination 🚀</h3>
+    <div class="answer">
+        <p>Revise all important definitions.</p>
+        <p>Practice short and long answers.</p>
+        <p>Write answers in simple and clear English.</p>
+        <p>Manage your time during the examination.</p>
+    </div>
+    <h3 style="text-align:center;margin-top:30px;">
+        College Resource Hub
+    </h3>
+</div>
+
+</div>
+
+<div class="progress-container">
+    <div id="progress"></div>
+</div>
+
+<div class="controls">
+    <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+    <span id="counter">1 / 19</span>
+    <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+    <button onclick="toggleFullScreen()">⛶ Fullscreen</button>
+</div>
+
+<footer>
+    © 2026 College Resource Hub |
+    ADARSH MISHRA AND NITIN SINGH
+</footer>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+
+    slides[index].classList.add("active");
+
+    document.getElementById("counter").textContent =
+        (index + 1) + " / " + totalSlides;
+
+    document.getElementById("progress").style.width =
+        ((index + 1) / totalSlides * 100) + "%";
+
+    document.getElementById("prevBtn").disabled = index === 0;
+    document.getElementById("nextBtn").disabled =
+        index === totalSlides - 1;
+}
+
+function changeSlide(direction) {
+    currentSlide += direction;
+
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+
+    showSlide(currentSlide);
+}
+
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowRight") changeSlide(1);
+    if (event.key === "ArrowLeft") changeSlide(-1);
+});
+
+showSlide(currentSlide);
+</script>
 
 </body>
-
 </html>

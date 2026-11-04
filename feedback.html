@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Share Feedback | College Resource Hub</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    color:white;
+    background:
+    radial-gradient(circle at 10% 20%,#073b70 0%,transparent 35%),
+    radial-gradient(circle at 90% 80%,#063d56 0%,transparent 35%),
+    linear-gradient(135deg,#020817,#071a35,#020817);
+    overflow-x:hidden;
+}
+
+/* BACKGROUND ANIMATION */
+
+.background span{
+    position:fixed;
+    width:8px;
+    height:8px;
+    background:#00eaff;
+    border-radius:50%;
+    box-shadow:0 0 15px #00eaff;
+    animation:float 10s linear infinite;
+    opacity:.5;
+    pointer-events:none;
+}
+
+.background span:nth-child(1){left:10%;animation-duration:12s;}
+.background span:nth-child(2){left:25%;animation-duration:8s;animation-delay:2s;}
+.background span:nth-child(3){left:45%;animation-duration:15s;animation-delay:1s;}
+.background span:nth-child(4){left:70%;animation-duration:10s;animation-delay:3s;}
+.background span:nth-child(5){left:90%;animation-duration:13s;animation-delay:2s;}
+
+@keyframes float{
+    0%{top:110%;transform:translateX(0) scale(.5);}
+    50%{transform:translateX(50px) scale(1.5);}
+    100%{top:-10%;transform:translateX(-50px) scale(.5);}
+}
+
+/* NAVBAR */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 8%;
+    border-bottom:1px solid #ffffff18;
+    background:#02081780;
+    backdrop-filter:blur(15px);
+}
+
+.logo{
+    font-size:21px;
+    font-weight:800;
+    color:#00eaff;
+    letter-spacing:1px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    border:1px solid #00eaff70;
+    padding:9px 20px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#00d9ff;
+    color:#00101c;
+    box-shadow:0 0 20px #00d9ff;
+}
+
+/* MAIN */
+
+.container{
+    min-height:85vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:50px 20px;
+}
+
+.feedback-card{
+    width:100%;
+    max-width:650px;
+    padding:40px;
+    background:#ffffff0b;
+    border:1px solid #00d9ff50;
+    border-radius:25px;
+    backdrop-filter:blur(20px);
+    box-shadow:0 0 50px #00cfff18;
+    animation:appear 1s ease;
+}
+
+@keyframes appear{
+    from{opacity:0;transform:translateY(35px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+.top-icon{
+    width:75px;
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto auto 20px;
+    border-radius:50%;
+    font-size:35px;
+    background:#00d9ff18;
+    border:1px solid #00eaff;
+    box-shadow:0 0 25px #00d9ff40;
+}
+
+h1{
+    text-align:center;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+h1 span{
+    color:#00eaff;
+}
+
+.subtitle{
+    text-align:center;
+    color:#a9bfd3;
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+/* RATING */
+
+.rating-title{
+    text-align:center;
+    margin-bottom:12px;
+    font-weight:600;
+}
+
+.stars{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:8px;
+}
+
+.stars span{
+    font-size:38px;
+    color:#536273;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.stars span:hover,
+.stars span.active{
+    color:#ffc928;
+    transform:scale(1.2);
+    text-shadow:0 0 15px #ffc928;
+}
+
+#ratingText{
+    text-align:center;
+    color:#00eaff;
+    font-size:13px;
+    min-height:25px;
+    margin-bottom:25px;
+}
+
+/* INPUTS */
+
+.form-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    font-weight:500;
+}
+
+input,textarea{
+    width:100%;
+    padding:14px 16px;
+    background:#07172b;
+    border:1px solid #ffffff25;
+    border-radius:12px;
+    color:white;
+    font-family:inherit;
+    outline:none;
+    transition:.3s;
+}
+
+input:focus,textarea:focus{
+    border-color:#00eaff;
+    box-shadow:0 0 15px #00d9ff30;
+}
+
+input::placeholder,textarea::placeholder{
+    color:#8295a9;
+}
+
+textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+/* BUTTON */
+
+.submit-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#00cfff,#00f0c8);
+    color:#00121e;
+    font-family:inherit;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px #00d9ff80;
+}
+
+.note{
+    text-align:center;
+    color:#829bb2;
+    font-size:11px;
+    margin-top:15px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#829bb2;
+    font-size:12px;
+    border-top:1px solid #ffffff15;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+    nav{padding:18px 5%;}
+    .logo{font-size:16px;}
+    nav a{padding:8px 13px;font-size:12px;}
+    .feedback-card{padding:28px 20px;}
+    h1{font-size:27px;}
+    .stars span{font-size:33px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<nav>
+    <div class="logo">🎓 CRH</div>
+    <a href="index.html">← Back to Home</a>
+</nav>
+
+<div class="container">
+
+<div class="feedback-card">
+
+    <div class="top-icon">💬</div>
+
+    <h1>Your <span>Feedback</span></h1>
+
+    <p class="subtitle">
+        Your opinion matters! Help us improve College Resource Hub.
+        Share your experience and suggestions with us.
+    </p>
+
+    <form id="feedbackForm">
+
+        <p class="rating-title">How would you rate our website?</p>
+
+        <div class="stars" id="stars">
+            <span data-value="1">★</span>
+            <span data-value="2">★</span>
+            <span data-value="3">★</span>
+            <span data-value="4">★</span>
+            <span data-value="5">★</span>
+        </div>
+
+        <p id="ratingText">Select your rating ⭐</p>
+
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address (Optional)</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+            <label for="message">Your Feedback</label>
+            <textarea id="message" placeholder="Tell us what you liked or what we can improve..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+            🚀 SUBMIT FEEDBACK
+        </button>
+
+        <p class="note">
+            Thank you for helping us make learning better ❤️
+        </p>
+
+    </form>
+
+</div>
+</div>
+
+<footer>
+    © 2026 College Resource Hub | Learn • Explore • Grow 🚀
+</footer>
+
+<script>
+let selectedRating = 0;
+
+const stars = document.querySelectorAll("#stars span");
+const ratingText = document.getElementById("ratingText");
+
+const ratingMessages = {
+    1:"Poor 😞",
+    2:"Fair 🙂",
+    3:"Good 😊",
+    4:"Very Good 🤩",
+    5:"Excellent! 🔥"
+};
+
+stars.forEach(star => {
+    star.addEventListener("click", () => {
+
+        selectedRating = Number(star.dataset.value);
+
+        stars.forEach(item => {
+            item.classList.toggle(
+                "active",
+                Number(item.dataset.value) <= selectedRating
+            );
+        });
+
+        ratingText.textContent =
+            ratingMessages[selectedRating];
+    });
+});
+
+document.getElementById("feedbackForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if(selectedRating === 0){
+        alert("Please select a star rating!");
+        return;
+    }
+
+    if(message.length < 5){
+        alert("Please write a little more feedback.");
+        return;
+    }
+
+    const feedback =
+`🎓 COLLEGE RESOURCE HUB - FEEDBACK
+
+👤 Name: ${name || "Not provided"}
+📧 Email: ${email || "Not provided"}
+⭐ Rating: ${selectedRating}/5
+
+💬 Feedback:
+${message}`;
+
+    const whatsappURL =
+        "https://wa.me/919153304983?text=" +
+        encodeURIComponent(feedback);
+
+    window.open(whatsappURL, "_blank");
+
+});
+</script>
+
+</body>
+</html>

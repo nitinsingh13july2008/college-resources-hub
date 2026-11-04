@@ -1,67 +1,452 @@
+```html
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>English PYQ Practice</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English PYQ Practice | College Resource Hub</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050b1b;
+    color: white;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    filter: blur(150px);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::before {
+    background: #0066ff;
+    opacity: 0.22;
+    top: -150px;
+    left: -100px;
+}
+
+body::after {
+    background: #00d9ff;
+    opacity: 0.16;
+    bottom: -150px;
+    right: -100px;
+}
+
+header {
+    height: 65px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(5, 15, 40, 0.9);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.logo {
+    color: #00e5ff;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+}
+
+nav a {
+    color: #d8eaff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: #00e5ff;
+}
+
+.progress {
+    height: 4px;
+    background: rgba(255,255,255,0.08);
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00e5ff, #438cff);
+    transition: width 0.3s;
+}
+
+.presentation {
+    height: calc(100vh - 149px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 22px;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    max-width: 1050px;
+    max-height: 100%;
+    min-height: 450px;
+    overflow-y: auto;
+    padding: 45px 55px;
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    border-radius: 23px;
+    background: linear-gradient(
+        145deg,
+        rgba(15, 35, 75, 0.97),
+        rgba(5, 15, 38, 0.98)
+    );
+    box-shadow: 0 15px 55px rgba(0, 150, 255, 0.12);
+    animation: appear 0.4s ease;
+}
+
+.slide.active {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cover {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 430px;
+}
+
+.emoji {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 9px 17px;
+    border: 1px solid #00d9ff;
+    border-radius: 25px;
+    color: #00e5ff;
+    background: rgba(0, 217, 255, 0.08);
+    font-size: 12px;
+    margin-bottom: 22px;
+    letter-spacing: 1px;
+}
+
+.cover .tag {
+    align-self: center;
+}
+
+h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 22px;
+    background: linear-gradient(90deg, white, #00e5ff, #4a91ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: clamp(24px, 4vw, 35px);
+    color: #00e5ff;
+    margin-bottom: 28px;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 23px 0 12px;
+}
+
+p {
+    color: #c0d0e8;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+.answer {
+    margin-top: 10px;
+    padding: 18px 22px;
+    background: rgba(0, 217, 255, 0.07);
+    border-left: 4px solid #00e5ff;
+    border-radius: 10px;
+    color: #d7e8ff;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+.answer b {
+    color: #00e5ff;
+}
+
+.answer ol,
+.answer ul {
+    padding-left: 24px;
+    margin-top: 8px;
+}
+
+.answer li {
+    margin: 7px 0;
+}
+
+.example {
+    margin-top: 15px;
+    padding: 15px 18px;
+    border-radius: 10px;
+    background: rgba(0, 100, 255, 0.12);
+    color: white;
+    line-height: 1.8;
+}
+
+.example b {
+    color: #00e5ff;
+}
+
+.diagram {
+    text-align: center;
+    margin: 20px 0;
+    padding: 22px;
+    border: 1px solid #00d9ff;
+    background: rgba(0, 217, 255, 0.08);
+    border-radius: 15px;
+    color: #00e5ff;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.grid-item {
+    padding: 13px 16px;
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    background: rgba(0, 217, 255, 0.06);
+    border-radius: 10px;
+    color: #dceaff;
+}
+
+.grid-item b {
+    color: #00e5ff;
+    margin-right: 7px;
+}
+
+.credit {
+    color: #00e5ff;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 80px;
+    padding: 12px 5%;
+    background: rgba(5, 15, 40, 0.96);
+    border-top: 1px solid rgba(0, 217, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.counter {
+    color: #00e5ff;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #00e5ff, #4295ff);
+    color: #001321;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(0, 229, 255, 0.4);
+}
+
+button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+@media(max-width: 650px) {
+    header {
+        padding: 0 12px;
+    }
+
+    .logo {
+        font-size: 12px;
+    }
+
+    nav {
+        gap: 9px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .presentation {
+        padding: 12px;
+    }
+
+    .slide {
+        min-height: 390px;
+        padding: 28px 20px;
+        border-radius: 16px;
+    }
+
+    h3 {
+        font-size: 17px;
+    }
+
+    p,
+    .answer {
+        font-size: 13px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .controls {
+        padding: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    button {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+
+    .counter {
+        font-size: 12px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+<header>
+    <div class="logo">🎓 COLLEGE RESOURCE HUB</div>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="english.html">Syllabus</a>
         <a href="english-notes.html">Notes</a>
-        <a href="english-important.html">Important Questions</a>
+        <a href="english-important.html">Important</a>
     </nav>
+</header>
 
+<div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+</div>
 
-    <!-- HEADER -->
-    <header>
-        <h1>📚 English PYQ Practice</h1>
-        <p>Previous-question style practice for examination</p>
-    </header>
+<main class="presentation">
 
+    <!-- SLIDE 1 -->
+    <section class="slide active cover">
+        <div class="emoji">📚</div>
+        <div class="tag">ENGLISH EXAM PRACTICE</div>
+        <h1>English PYQ Practice</h1>
+        <p>
+            Topic-wise previous-question-style practice,
+            answers and revision questions for examination preparation.
+        </p>
+        <p class="credit">
+            Created by ADARSH MISHRA AND NITIN SINGH
+        </p>
+    </section>
 
-    <!-- EFFECTIVE LEARNING SKILLS -->
-    <section class="resources">
-
+    <!-- SLIDE 2 -->
+    <section class="slide">
+        <div class="tag">TOPIC 01</div>
         <h2>📖 Effective Learning Skills</h2>
 
-        <div class="resource-card">
-
-            <h3>Q1. What are Effective Learning Skills?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Effective learning skills are techniques and habits that help
-                students understand, remember and use information effectively.
-            </p>
-
+        <h3>Q1. What are Effective Learning Skills?</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            Effective learning skills are techniques and habits that help
+            students understand, remember and use information effectively.
         </div>
 
-
-        <div class="resource-card">
-
-            <h3>Q2. Explain the importance of Effective Learning Skills.</h3>
-
-            <p>
-                <b>Answer:</b>
-                Effective learning skills help students improve concentration,
-                manage time, understand concepts, remember information and
-                perform better in examinations.
-            </p>
-
+        <h3>Q2. Explain the importance of Effective Learning Skills.</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            Effective learning skills help students improve concentration,
+            manage time, understand concepts, remember information and
+            perform better in examinations.
         </div>
+    </section>
 
+    <!-- SLIDE 3 -->
+    <section class="slide">
+        <div class="tag">TOPIC 01</div>
+        <h2>Effective Learning Skills</h2>
 
-        <div class="resource-card">
-
-            <h3>Q3. Write five techniques for effective learning.</h3>
-
-            <p><b>Answer:</b></p>
-
+        <h3>Q3. Write five techniques for effective learning.</h3>
+        <div class="answer">
+            <b>Answer:</b>
             <ol>
                 <li>Time Management</li>
                 <li>Note Making</li>
@@ -69,36 +454,24 @@
                 <li>Practice</li>
                 <li>Self-Assessment</li>
             </ol>
-
         </div>
-
     </section>
 
-
-    <!-- LISTENING COMPREHENSION -->
-    <section class="resources">
-
+    <!-- SLIDE 4 -->
+    <section class="slide">
+        <div class="tag">TOPIC 02</div>
         <h2>🎧 Listening Comprehension</h2>
 
-        <div class="resource-card">
-
-            <h3>Q4. Define Listening Comprehension.</h3>
-
-            <p>
-                <b>Answer:</b>
-                Listening comprehension is the ability to listen carefully,
-                understand spoken information and respond correctly.
-            </p>
-
+        <h3>Q4. Define Listening Comprehension.</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            Listening comprehension is the ability to listen carefully,
+            understand spoken information and respond correctly.
         </div>
 
-
-        <div class="resource-card">
-
-            <h3>Q5. What are the steps involved in Listening Comprehension?</h3>
-
-            <p><b>Answer:</b></p>
-
+        <h3>Q5. What are the steps involved in Listening Comprehension?</h3>
+        <div class="answer">
+            <b>Answer:</b>
             <ol>
                 <li>Listen carefully.</li>
                 <li>Understand the main idea.</li>
@@ -106,49 +479,37 @@
                 <li>Remember key information.</li>
                 <li>Answer the questions.</li>
             </ol>
-
         </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q6. Write the importance of listening skills.</h3>
-
-            <p>
-                <b>Answer:</b>
-                Listening skills improve communication, concentration,
-                vocabulary and understanding of spoken English.
-            </p>
-
-        </div>
-
     </section>
 
+    <!-- SLIDE 5 -->
+    <section class="slide">
+        <div class="tag">TOPIC 02</div>
+        <h2>Listening Comprehension</h2>
 
-    <!-- NEWSPAPER READING -->
-    <section class="resources">
+        <h3>Q6. Write the importance of listening skills.</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            Listening skills improve communication, concentration,
+            vocabulary and understanding of spoken English.
+        </div>
+    </section>
 
+    <!-- SLIDE 6 -->
+    <section class="slide">
+        <div class="tag">TOPIC 03</div>
         <h2>📰 Newspaper Reading</h2>
 
-        <div class="resource-card">
-
-            <h3>Q7. What is Newspaper Reading?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Newspaper reading is the habit of reading news, articles,
-                headlines and other information published in newspapers.
-            </p>
-
+        <h3>Q7. What is Newspaper Reading?</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            Newspaper reading is the habit of reading news, articles,
+            headlines and other information published in newspapers.
         </div>
 
-
-        <div class="resource-card">
-
-            <h3>Q8. Explain the benefits of Newspaper Reading.</h3>
-
-            <p><b>Answer:</b></p>
-
+        <h3>Q8. Explain the benefits of Newspaper Reading.</h3>
+        <div class="answer">
+            <b>Answer:</b>
             <ul>
                 <li>Improves vocabulary.</li>
                 <li>Improves reading skills.</li>
@@ -156,386 +517,375 @@
                 <li>Improves grammar.</li>
                 <li>Provides information about current events.</li>
             </ul>
-
         </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q9. How can a student improve English through newspapers?</h3>
-
-            <p>
-                <b>Answer:</b>
-                A student can learn new words, understand sentence structures,
-                read articles regularly and note down difficult vocabulary.
-                This improves English language skills.
-            </p>
-
-        </div>
-
     </section>
 
+    <!-- SLIDE 7 -->
+    <section class="slide">
+        <div class="tag">TOPIC 03</div>
+        <h2>Newspaper Reading</h2>
 
-    <!-- PARTS OF SPEECH -->
-    <section class="resources">
+        <h3>Q9. How can a student improve English through newspapers?</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            A student can learn new words, understand sentence structures,
+            read articles regularly and note down difficult vocabulary.
+            This improves English language skills.
+        </div>
+    </section>
 
+    <!-- SLIDE 8 -->
+    <section class="slide">
+        <div class="tag">TOPIC 04</div>
         <h2>🔤 Parts of Speech</h2>
 
-        <div class="resource-card">
-
-            <h3>Q10. What are Parts of Speech?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Parts of speech are categories of words according to their
-                function and use in a sentence.
-            </p>
-
+        <h3>Q10. What are Parts of Speech?</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            Parts of speech are categories of words according to their
+            function and use in a sentence.
         </div>
 
-
-        <div class="resource-card">
-
-            <h3>Q11. Name the eight Parts of Speech.</h3>
-
-            <p><b>Answer:</b></p>
-
-            <ol>
-                <li>Noun</li>
-                <li>Pronoun</li>
-                <li>Verb</li>
-                <li>Adjective</li>
-                <li>Adverb</li>
-                <li>Preposition</li>
-                <li>Conjunction</li>
-                <li>Interjection</li>
-            </ol>
-
+        <h3>Q11. Name the eight Parts of Speech.</h3>
+        <div class="grid">
+            <div class="grid-item"><b>01.</b> Noun</div>
+            <div class="grid-item"><b>02.</b> Pronoun</div>
+            <div class="grid-item"><b>03.</b> Verb</div>
+            <div class="grid-item"><b>04.</b> Adjective</div>
+            <div class="grid-item"><b>05.</b> Adverb</div>
+            <div class="grid-item"><b>06.</b> Preposition</div>
+            <div class="grid-item"><b>07.</b> Conjunction</div>
+            <div class="grid-item"><b>08.</b> Interjection</div>
         </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q12. Identify the Parts of Speech in the sentence:</h3>
-
-            <div class="diagram">
-                Nitin plays cricket.
-            </div>
-
-            <p>
-                <b>Answer:</b>
-                <br><br>
-                Nitin → Noun
-                <br>
-                plays → Verb
-                <br>
-                cricket → Noun
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q13. Identify the Parts of Speech:</h3>
-
-            <div class="diagram">
-                She is a beautiful girl.
-            </div>
-
-            <p>
-                <b>Answer:</b>
-                <br><br>
-                She → Pronoun
-                <br>
-                is → Verb
-                <br>
-                a → Article
-                <br>
-                beautiful → Adjective
-                <br>
-                girl → Noun
-            </p>
-
-        </div>
-
     </section>
 
+    <!-- SLIDE 9 -->
+    <section class="slide">
+        <div class="tag">TOPIC 04 · PRACTICE</div>
+        <h2>Identify Parts of Speech</h2>
 
-    <!-- SENTENCE STRUCTURE -->
-    <section class="resources">
+        <h3>Q12. Identify the Parts of Speech in the sentence:</h3>
+        <div class="diagram">Nitin plays cricket.</div>
 
+        <div class="answer">
+            <b>Answer:</b><br><br>
+            Nitin → Noun<br>
+            plays → Verb<br>
+            cricket → Noun
+        </div>
+
+        <h3>Q13. Identify the Parts of Speech:</h3>
+        <div class="diagram">She is a beautiful girl.</div>
+
+        <div class="answer">
+            <b>Answer:</b><br><br>
+            She → Pronoun<br>
+            is → Verb<br>
+            a → Article<br>
+            beautiful → Adjective<br>
+            girl → Noun
+        </div>
+    </section>
+
+    <!-- SLIDE 10 -->
+    <section class="slide">
+        <div class="tag">TOPIC 05</div>
         <h2>✍️ Sentence Structure</h2>
 
-        <div class="resource-card">
-
-            <h3>Q14. What is Sentence Structure?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Sentence structure means the arrangement of words in a sentence
-                to express a complete meaning.
-            </p>
-
+        <h3>Q14. What is Sentence Structure?</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            Sentence structure means the arrangement of words in a sentence
+            to express a complete meaning.
         </div>
 
-
-        <div class="resource-card">
-
-            <h3>Q15. Write the basic structure of a sentence with an example.</h3>
-
-            <div class="diagram">
-                Subject + Verb + Object
-                <br><br>
+        <h3>Q15. Write the basic structure of a sentence with an example.</h3>
+        <div class="diagram">
+            Subject + Verb + Object
+            <br>
+            <span style="font-size:16px;color:white;">
                 Nitin + plays + cricket.
-            </div>
-
+            </span>
         </div>
+    </section>
 
+    <!-- SLIDE 11 -->
+    <section class="slide">
+        <div class="tag">TOPIC 05</div>
+        <h2>Sentence Structure</h2>
 
-        <div class="resource-card">
-
-            <h3>Q16. Name the types of sentences.</h3>
-
-            <p><b>Answer:</b></p>
-
+        <h3>Q16. Name the types of sentences.</h3>
+        <div class="answer">
+            <b>Answer:</b>
             <ol>
                 <li>Assertive Sentence</li>
                 <li>Interrogative Sentence</li>
                 <li>Imperative Sentence</li>
                 <li>Exclamatory Sentence</li>
             </ol>
-
         </div>
 
-
-        <div class="resource-card">
-
-            <h3>Q17. Identify the type of sentence:</h3>
-
-            <div class="diagram">
-                1. I am a student.
-                <br>
-                2. Are you ready?
-                <br>
-                3. Please open the door.
-                <br>
-                4. What a beautiful day!
-            </div>
-
-            <p>
-                <b>Answer:</b>
-                <br><br>
-                1. Assertive
-                <br>
-                2. Interrogative
-                <br>
-                3. Imperative
-                <br>
-                4. Exclamatory
-            </p>
-
+        <h3>Q17. Identify the type of sentence:</h3>
+        <div class="diagram" style="font-size:17px;">
+            1. I am a student.<br>
+            2. Are you ready?<br>
+            3. Please open the door.<br>
+            4. What a beautiful day!
         </div>
-
     </section>
 
+    <!-- SLIDE 12 -->
+    <section class="slide">
+        <div class="tag">TOPIC 05 · ANSWERS</div>
+        <h2>Sentence Identification</h2>
 
-    <!-- VERB -->
-    <section class="resources">
+        <h3>Q17. Answers</h3>
+        <div class="answer">
+            <b>1. I am a student.</b><br>
+            Assertive<br><br>
 
+            <b>2. Are you ready?</b><br>
+            Interrogative<br><br>
+
+            <b>3. Please open the door.</b><br>
+            Imperative<br><br>
+
+            <b>4. What a beautiful day!</b><br>
+            Exclamatory
+        </div>
+    </section>
+
+    <!-- SLIDE 13 -->
+    <section class="slide">
+        <div class="tag">TOPIC 06</div>
         <h2>🔵 Verb</h2>
 
-        <div class="resource-card">
-
-            <h3>Q18. Define Verb with examples.</h3>
-
-            <p>
-                <b>Answer:</b>
-                A verb is a word that shows an action or state of being.
-                <br><br>
-                Examples: Run, Eat, Write, Play, Read.
-            </p>
-
+        <h3>Q18. Define Verb with examples.</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            A verb is a word that shows an action or state of being.
+            <div class="example">
+                <b>Examples:</b> Run, Eat, Write, Play, Read.
+            </div>
         </div>
 
-
-        <div class="resource-card">
-
-            <h3>Q19. What is a Main Verb?</h3>
-
-            <p>
-                <b>Answer:</b>
-                A main verb shows the main action in a sentence.
-                <br><br>
-                Example: She <b>plays</b> cricket.
-            </p>
-
+        <h3>Q19. What is a Main Verb?</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            A main verb shows the main action in a sentence.
+            <div class="example">
+                <b>Example:</b> She <b>plays</b> cricket.
+            </div>
         </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q20. What is a Helping Verb?</h3>
-
-            <p>
-                <b>Answer:</b>
-                A helping verb helps the main verb in a sentence.
-                <br><br>
-                Examples: is, am, are, was, were, has, have, will.
-            </p>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q21. Differentiate between Transitive and Intransitive Verbs.</h3>
-
-            <p>
-                <b>Answer:</b>
-                <br><br>
-
-                <b>Transitive Verb:</b>
-                It requires an object.
-                <br>
-                Example: He reads <b>a book</b>.
-                <br><br>
-
-                <b>Intransitive Verb:</b>
-                It does not require an object.
-                <br>
-                Example: The baby sleeps.
-            </p>
-
-        </div>
-
     </section>
 
+    <!-- SLIDE 14 -->
+    <section class="slide">
+        <div class="tag">TOPIC 06</div>
+        <h2>Verb</h2>
 
-    <!-- ADDITIONAL GRAMMAR -->
-    <section class="resources">
+        <h3>Q20. What is a Helping Verb?</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            A helping verb helps the main verb in a sentence.
+            <div class="example">
+                <b>Examples:</b> is, am, are, was, were, has, have, will.
+            </div>
+        </div>
 
+        <h3>Q21. Differentiate between Transitive and Intransitive Verbs.</h3>
+        <div class="answer">
+            <b>Transitive Verb:</b><br>
+            It requires an object.<br>
+            Example: He reads <b>a book</b>.<br><br>
+
+            <b>Intransitive Verb:</b><br>
+            It does not require an object.<br>
+            Example: The baby sleeps.
+        </div>
+    </section>
+
+    <!-- SLIDE 15 -->
+    <section class="slide">
+        <div class="tag">ADDITIONAL GRAMMAR</div>
         <h2>📌 Additional Practice</h2>
 
-        <div class="resource-card">
-
-            <h3>Q22. What are Tenses?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Tense shows the time of an action. The three main tenses are
-                Present, Past and Future.
-            </p>
-
+        <h3>Q22. What are Tenses?</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            Tense shows the time of an action. The three main tenses are
+            Present, Past and Future.
         </div>
 
-
-        <div class="resource-card">
-
-            <h3>Q23. What are Articles?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Articles are words used before nouns.
-                <br><br>
-                The three articles are:
-                <b>A, An and The.</b>
-            </p>
-
+        <h3>Q23. What are Articles?</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            Articles are words used before nouns.
+            <div class="example">
+                The three articles are: <b>A, An and The.</b>
+            </div>
         </div>
-
-
-        <div class="resource-card">
-
-            <h3>Q24. What are Prepositions?</h3>
-
-            <p>
-                <b>Answer:</b>
-                Prepositions show the relationship between words.
-                <br><br>
-                Examples: in, on, at, under, behind.
-            </p>
-
-        </div>
-
     </section>
 
+    <!-- SLIDE 16 -->
+    <section class="slide">
+        <div class="tag">ADDITIONAL GRAMMAR</div>
+        <h2>Prepositions</h2>
 
-    <!-- PRACTICE SET -->
-    <section class="resources">
+        <h3>Q24. What are Prepositions?</h3>
+        <div class="answer">
+            <b>Answer:</b><br>
+            Prepositions show the relationship between words.
+            <div class="example">
+                <b>Examples:</b> in, on, at, under, behind.
+            </div>
+        </div>
+    </section>
 
-        <h2>🔥 Most Important Practice Questions</h2>
+    <!-- SLIDE 17 -->
+    <section class="slide">
+        <div class="tag">PRACTICE SET</div>
+        <h2>🔥 Most Important Questions</h2>
 
-        <div class="resource-card">
-
+        <div class="answer">
             <ol>
-
                 <li>Define Effective Learning Skills.</li>
-
                 <li>Write five techniques for effective learning.</li>
-
                 <li>What is Listening Comprehension?</li>
-
                 <li>Explain the importance of listening skills.</li>
-
                 <li>What is Newspaper Reading?</li>
-
                 <li>Write five benefits of newspaper reading.</li>
-
                 <li>What are Parts of Speech?</li>
-
                 <li>Name all eight Parts of Speech.</li>
-
                 <li>Define Noun, Pronoun and Verb.</li>
-
                 <li>Define Adjective and Adverb.</li>
-
-                <li>Define Preposition and Conjunction.</li>
-
-                <li>What is Sentence Structure?</li>
-
-                <li>Write the basic structure of a sentence.</li>
-
-                <li>Name the types of sentences.</li>
-
-                <li>Define Verb.</li>
-
-                <li>Differentiate between Main Verb and Helping Verb.</li>
-
-                <li>Differentiate between Transitive and Intransitive Verbs.</li>
-
-                <li>What are Tenses?</li>
-
-                <li>What are Articles?</li>
-
-                <li>What are Prepositions?</li>
-
             </ol>
-
         </div>
-
     </section>
 
+    <!-- SLIDE 18 -->
+    <section class="slide">
+        <div class="tag">PRACTICE SET</div>
+        <h2>Quick Revision Questions</h2>
 
-    <!-- BACK BUTTON -->
-    <section class="resources">
-
-        <a href="index.html">
-            <button>⬅ Back to Home</button>
-        </a>
-
+        <div class="answer">
+            <ol start="11">
+                <li>Define Preposition and Conjunction.</li>
+                <li>What is Sentence Structure?</li>
+                <li>Write the basic structure of a sentence.</li>
+                <li>Name the types of sentences.</li>
+                <li>Define Verb.</li>
+                <li>Differentiate between Main Verb and Helping Verb.</li>
+                <li>Differentiate between Transitive and Intransitive Verbs.</li>
+                <li>What are Tenses?</li>
+                <li>What are Articles?</li>
+                <li>What are Prepositions?</li>
+            </ol>
+        </div>
     </section>
 
-
-    <!-- FOOTER -->
-    <footer>
-
+    <!-- SLIDE 19 -->
+    <section class="slide cover">
+        <div class="emoji">🎓</div>
+        <div class="tag">PRESENTATION COMPLETED</div>
+        <h1>Thank You!</h1>
         <p>
-            © 2026 College Resource Hub | Created by Nitin Singh
+            Keep Learning • Keep Practicing • Keep Growing
+            <br><br>
+            Best of Luck for Your English Examination!
         </p>
+        <p class="credit">
+            ADARSH MISHRA AND NITIN SINGH
+        </p>
+    </section>
 
-    </footer>
+</main>
+
+<div class="controls">
+
+    <div class="counter" id="counter">
+        Slide 1 / 19
+    </div>
+
+    <div class="buttons">
+        <button id="prevBtn" onclick="changeSlide(-1)">
+            ← Previous
+        </button>
+
+        <button id="nextBtn" onclick="changeSlide(1)">
+            Next →
+        </button>
+
+        <button onclick="toggleFullscreen()">
+            ⛶ Fullscreen
+        </button>
+    </div>
+
+</div>
+
+<script>
+const slides = document.querySelectorAll(".slide");
+const counter = document.getElementById("counter");
+const progressBar = document.getElementById("progressBar");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let currentSlide = 0;
+
+function showSlide(index) {
+    if (index < 0 || index >= slides.length) return;
+
+    slides.forEach(slide => {
+        slide.classList.remove("active");
+    });
+
+    currentSlide = index;
+    slides[currentSlide].classList.add("active");
+    slides[currentSlide].scrollTop = 0;
+
+    counter.textContent =
+        `Slide ${currentSlide + 1} / ${slides.length}`;
+
+    progressBar.style.width =
+        ((currentSlide + 1) / slides.length * 100) + "%";
+
+    prevBtn.disabled = currentSlide === 0;
+    nextBtn.disabled = currentSlide === slides.length - 1;
+}
+
+function changeSlide(direction) {
+    showSlide(currentSlide + direction);
+}
+
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen?.();
+    } else {
+        document.exitFullscreen?.();
+    }
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowRight" || event.key === "PageDown") {
+        changeSlide(1);
+    }
+
+    if (event.key === "ArrowLeft" || event.key === "PageUp") {
+        changeSlide(-1);
+    }
+
+    if (event.key === "Home") {
+        showSlide(0);
+    }
+
+    if (event.key === "End") {
+        showSlide(slides.length - 1);
+    }
+});
+
+showSlide(0);
+</script>
 
 </body>
-
 </html>
+```

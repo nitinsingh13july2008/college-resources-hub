@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C Programming Resources | College Resource Hub</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050b18;
+    color: #fff;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+    radial-gradient(circle at 15% 20%, rgba(0,170,255,.15), transparent 35%),
+    radial-gradient(circle at 85% 80%, rgba(0,255,220,.10), transparent 35%);
+}
+
+.navbar {
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(3,12,28,.95);
+    border-bottom: 1px solid rgba(0,200,255,.25);
+}
+
+.logo {
+    color: #00d9ff;
+    font-size: 21px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.home {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 65px 20px 35px;
+}
+
+.hero span {
+    color: #00d9ff;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(0,200,255,.4);
+}
+
+.hero p {
+    color: #a9c6df;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1050px;
+    margin: auto;
+    padding: 25px 20px 75px;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.resource-card {
+    text-align: center;
+    padding: 35px 22px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #102542, #071529);
+    border: 1px solid rgba(0,200,255,.3);
+    box-shadow: 0 8px 25px rgba(0,0,0,.3);
+    transition: .35s;
+}
+
+.resource-card:hover {
+    transform: translateY(-7px);
+    border-color: #00eaff;
+    box-shadow: 0 12px 30px rgba(0,190,255,.18);
+}
+
+.icon {
+    font-size: 43px;
+    margin-bottom: 17px;
+}
+
+.resource-card h2 {
+    color: #00dcff;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.resource-card p {
+    color: #b4cbe0;
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 48px;
+    margin-bottom: 20px;
+}
+
+.resource-card a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #007bff, #00cfff);
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.resource-card a:hover {
+    box-shadow: 0 0 20px rgba(0,200,255,.5);
+    transform: scale(1.05);
+}
+
+.footer {
+    text-align: center;
+    padding: 25px 15px;
+    color: #91aec8;
+    border-top: 1px solid rgba(0,200,255,.2);
+    line-height: 1.8;
+}
+
+.footer span {
+    color: #00d9ff;
+}
+
+@media(max-width:650px) {
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .resource-card {
+        padding: 28px 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">🎓 RESOURCE HUB</a>
+    <a href="index.html" class="home">← Home</a>
+</nav>
+
+<header class="hero">
+    <h1>C PROGRAMMING <span>RESOURCES</span></h1>
+    <p>
+        Learn C Programming with notes, syllabus, important questions
+        and previous year questions.
+    </p>
+</header>
+
+<main class="container">
+
+    <div class="resource-grid">
+
+        <!-- SYLLABUS -->
+        <div class="resource-card">
+            <div class="icon">📘</div>
+            <h2>C Syllabus</h2>
+            <p>Explore the complete C Programming syllabus and all units.</p>
+            <a href="c.html">View Syllabus →</a>
+        </div>
+
+        <!-- NOTES -->
+        <div class="resource-card">
+            <div class="icon">📝</div>
+            <h2>C Notes</h2>
+            <p>Study easy explanations and detailed notes for your preparation.</p>
+            <a href="c-notes.html">View Notes →</a>
+        </div>
+
+        <!-- IMPORTANT -->
+        <div class="resource-card">
+            <div class="icon">⭐</div>
+            <h2>Important Questions</h2>
+            <p>Practice important questions and prepare key programming topics.</p>
+            <a href="c-important.html">View Questions →</a>
+        </div>
+
+        <!-- PYQ -->
+        <div class="resource-card">
+            <div class="icon">📚</div>
+            <h2>Practical PYQ</h2>
+            <p>Practice previous year practical programming questions.</p>
+            <a href="c-pyq.html">View PYQ →</a>
+        </div>
+
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>🎓 <span>College Resource Hub</span></p>
+    <p>Learn • Explore • Grow 🚀</p>
+    <p>Founder: <span>Adarsh Mishra and Nitin Singh</span></p>
+    <p>© 2026 College Resource Hub. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

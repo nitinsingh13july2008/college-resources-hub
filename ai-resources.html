@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI & ML Resources | College Resource Hub</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #061329;
+    color: white;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: #007bff;
+    filter: blur(150px);
+    opacity: 0.17;
+    top: -130px;
+    left: -130px;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: #00e5ff;
+    filter: blur(150px);
+    opacity: 0.12;
+    bottom: -130px;
+    right: -100px;
+    z-index: -1;
+}
+
+/* NAVBAR */
+.navbar {
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: rgba(3, 15, 35, 0.92);
+    border-bottom: 1px solid rgba(0, 229, 255, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    color: #00e5ff;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.nav-links {
+    display: flex;
+    gap: 23px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #d8eaff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00e5ff;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 85px 20px 65px;
+    animation: appear 0.8s ease;
+}
+
+.tag {
+    display: inline-block;
+    padding: 9px 20px;
+    border: 1px solid rgba(0, 229, 255, 0.5);
+    border-radius: 30px;
+    color: #00e5ff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    background: rgba(0, 229, 255, 0.06);
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 55px);
+    font-weight: 900;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #fff, #00e5ff, #62aaff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #b8cce5;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.hero-line {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #00e5ff);
+    border-radius: 10px;
+    margin: 30px auto 0;
+    box-shadow: 0 0 15px #00e5ff;
+}
+
+/* RESOURCE SECTION */
+.resources {
+    max-width: 1150px;
+    margin: auto;
+    padding: 15px 25px 70px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.heading h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.heading h2 span {
+    color: #00e5ff;
+}
+
+.heading p {
+    color: #9db6d3;
+    font-size: 15px;
+}
+
+/* CARDS */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.resource-card {
+    position: relative;
+    overflow: hidden;
+    padding: 35px 30px;
+    min-height: 275px;
+    background: linear-gradient(
+        145deg,
+        rgba(18, 49, 86, 0.9),
+        rgba(8, 25, 50, 0.95)
+    );
+    border: 1px solid rgba(0, 229, 255, 0.23);
+    border-radius: 22px;
+    transition: 0.35s ease;
+    animation: appear 0.8s ease both;
+}
+
+.resource-card::before {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #00d9ff;
+    filter: blur(90px);
+    opacity: 0;
+    right: -40px;
+    top: -40px;
+    transition: 0.4s;
+}
+
+.resource-card:hover {
+    transform: translateY(-10px);
+    border-color: #00e5ff;
+    box-shadow: 0 12px 35px rgba(0, 200, 255, 0.15);
+}
+
+.resource-card:hover::before {
+    opacity: 0.25;
+}
+
+.resource-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.resource-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.resource-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.icon-box {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 17px;
+    font-size: 32px;
+    background: rgba(0, 229, 255, 0.12);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    margin-bottom: 23px;
+}
+
+.resource-card h3 {
+    font-size: 23px;
+    color: #00e5ff;
+    margin-bottom: 13px;
+}
+
+.resource-card p {
+    color: #c0d0e5;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.resource-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    padding: 12px 23px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #007bff, #00d9ff);
+    color: #03172e;
+    font-size: 14px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.resource-card a:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+/* INFO */
+.info {
+    max-width: 1050px;
+    margin: 0 auto 65px;
+    padding: 0 25px;
+}
+
+.info-box {
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(0, 229, 255, 0.06);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.info-box h3 {
+    color: #00e5ff;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.info-box p {
+    color: #b8cce5;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* BACK BUTTON */
+.back-area {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.back-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #00e5ff;
+    border: 1px solid #00e5ff;
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #00e5ff;
+    color: #061329;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 28px 15px;
+    background: #030d1d;
+    border-top: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+footer h3 {
+    color: #00e5ff;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #8fa8c5;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* ANIMATION */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+@media(max-width: 700px) {
+    .navbar {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 17px;
+    }
+
+    .hero {
+        padding: 60px 18px 45px;
+    }
+
+    .resource-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .resource-card {
+        min-height: auto;
+        padding: 28px 23px;
+    }
+
+    .heading h2 {
+        font-size: 27px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <div class="logo">🎓 COLLEGE RESOURCE HUB</div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="ai-introduction.html">AI & ML</a>
+        <a href="ai-notes.html">Notes</a>
+    </nav>
+
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="tag">🤖 ARTIFICIAL INTELLIGENCE • MACHINE LEARNING</div>
+
+    <h1>AI & ML Resources</h1>
+
+    <p>
+        Explore the world of Artificial Intelligence and Machine Learning.
+        Access study notes, complete syllabus, important questions
+        and previous year questions — all in one place.
+    </p>
+
+    <div class="hero-line"></div>
+
+</section>
+
+<!-- RESOURCES -->
+<main class="resources">
+
+    <div class="heading">
+        <h2>Explore Your <span>Resources</span></h2>
+        <p>Select any option to access your study material.</p>
+    </div>
+
+    <div class="resource-grid">
+
+        <div class="resource-card">
+            <div class="icon-box">📘</div>
+            <h3>Study Notes</h3>
+            <p>
+                Learn AI and Machine Learning concepts
+                with organized notes and study material.
+            </p>
+            <a href="ai-notes.html">
+                Open Notes ➜
+            </a>
+        </div>
+
+        <div class="resource-card">
+            <div class="icon-box">📚</div>
+            <h3>Complete Syllabus</h3>
+            <p>
+                Explore your AI & ML syllabus and
+                understand all the topics covered in your course.
+            </p>
+            <a href="ai-introduction.html">
+                View Syllabus ➜
+            </a>
+        </div>
+
+        <div class="resource-card">
+            <div class="icon-box">⭐</div>
+            <h3>Important Questions</h3>
+            <p>
+                Prepare important examination questions
+                and revise key topics for your semester.
+            </p>
+            <a href="ai-important.html">
+                View Questions ➜
+            </a>
+        </div>
+
+        <div class="resource-card">
+            <div class="icon-box">📝</div>
+            <h3>Previous Year Questions</h3>
+            <p>
+                Practice previous year questions and
+                prepare confidently for your examination.
+            </p>
+            <a href="ai-pyq.html">
+                Practice PYQ ➜
+            </a>
+        </div>
+
+    </div>
+
+</main>
+
+<!-- INFO -->
+<section class="info">
+
+    <div class="info-box">
+        <h3>🚀 Learn • Explore • Grow</h3>
+
+        <p>
+            Artificial Intelligence is shaping the future.
+            Keep learning, keep practicing and keep building
+            your knowledge every day.
+        </p>
+    </div>
+
+</section>
+
+<!-- BACK -->
+<div class="back-area">
+    <a href="index.html" class="back-btn">
+        ← Back to Home
+    </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+    <h3>🎓 College Resource Hub</h3>
+
+    <p>Created by ADARSH MISHRA AND NITIN SINGH</p>
+
+    <p>Learn • Explore • Grow 🚀</p>
+
+    <p>© 2026 College Resource Hub. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>

@@ -1,470 +1,211 @@
-<!DOCTYPE html>
-<html>
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>English Notes</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Notes | College Resource Hub</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Arial,sans-serif;
+background:#050b1b;color:white;
+min-height:100vh;padding:20px;
+display:flex;justify-content:center;align-items:center
+}
+.presentation{width:100%;max-width:950px}
+.top{
+display:flex;justify-content:space-between;
+color:#00e5ff;margin-bottom:15px;font-size:14px
+}
+.slide{
+display:none;min-height:480px;padding:55px;
+border:1px solid #087caa;border-radius:22px;
+background:linear-gradient(135deg,#102650,#071126,#101d42);
+box-shadow:0 0 30px #007bff22
+}
+.slide.active{display:flex;flex-direction:column;justify-content:center}
+h1{font-size:clamp(30px,5vw,48px);color:#00e5ff;margin-bottom:20px}
+h2{font-size:clamp(24px,4vw,35px);color:#00e5ff;margin-bottom:22px}
+p,li{font-size:18px;line-height:1.9;color:#d2def2}
+ul{padding-left:25px}
+.example{
+background:#142c50;padding:17px;border-radius:12px;
+margin-top:18px;color:#00e5ff;font-size:17px
+}
+.controls{
+display:flex;justify-content:space-between;
+gap:10px;margin-top:20px
+}
+button{
+border:0;border-radius:30px;padding:13px 23px;
+background:linear-gradient(90deg,#00e5ff,#3985ff);
+color:#001321;font-weight:bold;cursor:pointer
+}
+button:disabled{opacity:.35;cursor:not-allowed}
+#number{color:#00e5ff}
+.bar{height:5px;background:#263956;margin-top:18px;border-radius:10px}
+.fill{height:100%;width:0;background:#00e5ff;transition:.3s}
+footer{text-align:center;color:#8296b5;margin-top:18px;font-size:12px}
+@media(max-width:600px){
+.slide{padding:28px 20px;min-height:470px}
+p,li{font-size:16px}
+}
+</style>
 </head>
 
 <body>
-
-    <!-- NAVIGATION -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="english.html">Syllabus</a>
-    </nav>
-
-    <!-- HEADER -->
-    <header>
-        <h1>📘 English Notes</h1>
-        <p>Simple and exam-ready English notes</p>
-    </header>
-
-
-    <!-- EFFECTIVE LEARNING SKILLS -->
-    <section class="resources">
-
-        <h2>1. Effective Learning Skills</h2>
-
-        <div class="resource-card">
-
-            <h3>Meaning</h3>
-
-            <p>
-                Effective learning skills are techniques and habits that help
-                a student understand, remember and use information better.
-            </p>
-
-            <h3>Important Learning Skills</h3>
-
-            <ul>
-                <li>Time Management</li>
-                <li>Concentration</li>
-                <li>Note Making</li>
-                <li>Reading Skills</li>
-                <li>Listening Skills</li>
-                <li>Revision</li>
-                <li>Practice</li>
-                <li>Self-Assessment</li>
-            </ul>
-
-            <h3>Tips for Effective Learning</h3>
-
-            <ol>
-                <li>Set clear learning goals.</li>
-                <li>Make a proper study timetable.</li>
-                <li>Study in a quiet environment.</li>
-                <li>Make short and useful notes.</li>
-                <li>Revise regularly.</li>
-                <li>Practice questions.</li>
-                <li>Take short breaks.</li>
-            </ol>
-
-        </div>
-
-    </section>
-
-
-    <!-- LISTENING COMPREHENSION -->
-    <section class="resources">
-
-        <h2>2. Listening Comprehension</h2>
-
-        <div class="resource-card">
-
-            <h3>Meaning</h3>
-
-            <p>
-                Listening comprehension is the ability to listen carefully,
-                understand spoken information and answer questions based on it.
-            </p>
-
-            <h3>Steps</h3>
-
-            <ol>
-                <li>Listen carefully.</li>
-                <li>Understand the main idea.</li>
-                <li>Identify important details.</li>
-                <li>Remember key information.</li>
-                <li>Answer the questions correctly.</li>
-            </ol>
-
-            <h3>Importance</h3>
-
-            <ul>
-                <li>Improves communication.</li>
-                <li>Improves concentration.</li>
-                <li>Helps understand spoken English.</li>
-                <li>Improves vocabulary.</li>
-                <li>Useful in academic and professional life.</li>
-            </ul>
-
-        </div>
-
-    </section>
-
-
-    <!-- NEWSPAPER READING -->
-    <section class="resources">
-
-        <h2>3. Newspaper Reading</h2>
-
-        <div class="resource-card">
-
-            <h3>Meaning</h3>
-
-            <p>
-                Newspaper reading is the habit of reading news articles,
-                headlines and other information published in newspapers.
-            </p>
-
-            <h3>Benefits of Newspaper Reading</h3>
-
-            <ul>
-                <li>Improves vocabulary.</li>
-                <li>Improves reading skills.</li>
-                <li>Improves general knowledge.</li>
-                <li>Improves grammar.</li>
-                <li>Helps understand current events.</li>
-                <li>Improves communication skills.</li>
-            </ul>
-
-            <h3>How to Read a Newspaper</h3>
-
-            <ol>
-                <li>Read the main headlines.</li>
-                <li>Read important articles.</li>
-                <li>Underline difficult words.</li>
-                <li>Find the meaning of new words.</li>
-                <li>Try to understand the main idea.</li>
-                <li>Make short notes if required.</li>
-            </ol>
-
-        </div>
-
-    </section>
-
-
-    <!-- PARTS OF SPEECH -->
-    <section class="resources">
-
-        <h2>4. Parts of Speech</h2>
-
-        <div class="resource-card">
-
-            <h3>Definition</h3>
-
-            <p>
-                Parts of speech are categories of words according to their
-                function and use in a sentence.
-            </p>
-
-            <h3>Eight Parts of Speech</h3>
-
-            <ol>
-
-                <li>
-                    <b>Noun</b> – Name of a person, place, thing or idea.
-                    <br>
-                    Example: Nitin, Delhi, Book, Honesty
-                </li>
-
-                <br>
-
-                <li>
-                    <b>Pronoun</b> – A word used in place of a noun.
-                    <br>
-                    Example: He, She, It, They
-                </li>
-
-                <br>
-
-                <li>
-                    <b>Verb</b> – Shows an action or state.
-                    <br>
-                    Example: Run, Eat, Write, Is
-                </li>
-
-                <br>
-
-                <li>
-                    <b>Adjective</b> – Describes a noun or pronoun.
-                    <br>
-                    Example: Good, Beautiful, Tall
-                </li>
-
-                <br>
-
-                <li>
-                    <b>Adverb</b> – Describes a verb, adjective or another adverb.
-                    <br>
-                    Example: Slowly, Quickly, Very
-                </li>
-
-                <br>
-
-                <li>
-                    <b>Preposition</b> – Shows the relationship between words.
-                    <br>
-                    Example: In, On, At, Under, Behind
-                </li>
-
-                <br>
-
-                <li>
-                    <b>Conjunction</b> – Joins words or sentences.
-                    <br>
-                    Example: And, But, Or, Because
-                </li>
-
-                <br>
-
-                <li>
-                    <b>Interjection</b> – Expresses sudden feelings or emotions.
-                    <br>
-                    Example: Wow!, Oh!, Hurrah!, Alas!
-                </li>
-
-            </ol>
-
-        </div>
-
-    </section>
-
-
-    <!-- SENTENCE STRUCTURE -->
-    <section class="resources">
-
-        <h2>5. Sentence Structure</h2>
-
-        <div class="resource-card">
-
-            <h3>Definition</h3>
-
-            <p>
-                Sentence structure means the arrangement of words in a sentence
-                to express a complete meaning.
-            </p>
-
-            <h3>Basic Structure</h3>
-
-            <div class="diagram">
-
-                Subject + Verb + Object
-
-                <br><br>
-
-                Example:
-
-                <br>
-
-                Nitin + plays + cricket.
-
-            </div>
-
-            <h3>Parts of a Sentence</h3>
-
-            <ul>
-                <li><b>Subject</b> – Who or what the sentence is about.</li>
-                <li><b>Verb</b> – Shows action or state.</li>
-                <li><b>Object</b> – Receives the action.</li>
-            </ul>
-
-            <h3>Types of Sentences</h3>
-
-            <ol>
-                <li>Assertive Sentence</li>
-                <li>Interrogative Sentence</li>
-                <li>Imperative Sentence</li>
-                <li>Exclamatory Sentence</li>
-            </ol>
-
-            <h3>Examples</h3>
-
-            <p>
-                <b>Assertive:</b> I am a student.
-                <br><br>
-
-                <b>Interrogative:</b> Are you a student?
-                <br><br>
-
-                <b>Imperative:</b> Please open the door.
-                <br><br>
-
-                <b>Exclamatory:</b> What a beautiful day!
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- VERB -->
-    <section class="resources">
-
-        <h2>6. Verb</h2>
-
-        <div class="resource-card">
-
-            <h3>Definition</h3>
-
-            <p>
-                A verb is a word that shows an action, occurrence or state
-                of being.
-            </p>
-
-            <h3>Examples</h3>
-
-            <ul>
-                <li>Run</li>
-                <li>Eat</li>
-                <li>Write</li>
-                <li>Play</li>
-                <li>Read</li>
-                <li>Go</li>
-                <li>Sleep</li>
-            </ul>
-
-            <h3>Types of Verbs</h3>
-
-            <ol>
-
-                <li>
-                    <b>Main Verb</b>
-                    <br>
-                    Shows the main action.
-                    <br>
-                    Example: She <b>plays</b> cricket.
-                </li>
-
-                <br>
-
-                <li>
-                    <b>Helping Verb</b>
-                    <br>
-                    Helps the main verb.
-                    <br>
-                    Example: is, am, are, was, were, has, have, will
-                </li>
-
-                <br>
-
-                <li>
-                    <b>Transitive Verb</b>
-                    <br>
-                    Requires an object.
-                    <br>
-                    Example: He reads a book.
-                </li>
-
-                <br>
-
-                <li>
-                    <b>Intransitive Verb</b>
-                    <br>
-                    Does not require an object.
-                    <br>
-                    Example: The baby sleeps.
-                </li>
-
-            </ol>
-
-        </div>
-
-    </section>
-
-
-    <!-- ADDITIONAL GRAMMAR -->
-    <section class="resources">
-
-        <h2>7. Additional Grammar Practice</h2>
-
-        <div class="resource-card">
-
-            <h3>Topics</h3>
-
-            <ul>
-                <li>Tenses</li>
-                <li>Articles – A, An, The</li>
-                <li>Prepositions</li>
-                <li>Subject-Verb Agreement</li>
-                <li>Vocabulary</li>
-                <li>Synonyms and Antonyms</li>
-                <li>Basic Grammar</li>
-            </ul>
-
-            <p>
-                These topics can be added and expanded later according to
-                the actual college syllabus.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- QUICK REVISION -->
-    <section class="resources">
-
-        <h2>⚡ Quick Revision</h2>
-
-        <div class="resource-card">
-
-            <p>
-                <b>Effective Learning Skills:</b>
-                Techniques that improve learning.
-            </p>
-
-            <p>
-                <b>Listening Comprehension:</b>
-                Understanding spoken information.
-            </p>
-
-            <p>
-                <b>Newspaper Reading:</b>
-                Reading news to improve knowledge and language skills.
-            </p>
-
-            <p>
-                <b>Parts of Speech:</b>
-                Noun, Pronoun, Verb, Adjective, Adverb,
-                Preposition, Conjunction and Interjection.
-            </p>
-
-            <p>
-                <b>Sentence Structure:</b>
-                Subject + Verb + Object.
-            </p>
-
-            <p>
-                <b>Verb:</b>
-                A word that shows action or state.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- BACK BUTTON -->
-    <section class="resources">
-
-        <a href="index.html">
-            <button>⬅ Back to Home</button>
-        </a>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <p>
-            © 2026 College Resource Hub | Created by Nitin Singh
-        </p>
-
-    </footer>
-
+<div class="presentation">
+
+<div class="top">
+<span>📖 ENGLISH NOTES</span>
+<span id="number">1 / 9</span>
+</div>
+
+<section class="slide active">
+<h1>ENGLISH NOTES</h1>
+<p>English Language and Communication</p>
+<div class="example">Learn • Understand • Practise • Improve</div>
+</section>
+
+<section class="slide">
+<h2>1. Effective Learning Skills</h2>
+<p>Learning skills help students understand and remember information effectively.</p>
+<ul>
+<li>Set clear learning goals.</li>
+<li>Prepare a daily study timetable.</li>
+<li>Make short and meaningful notes.</li>
+<li>Revise topics regularly.</li>
+<li>Avoid distractions while studying.</li>
+</ul>
+<div class="example">Example: Study for 30 minutes and revise for 5 minutes.</div>
+</section>
+
+<section class="slide">
+<h2>2. Listening Comprehension</h2>
+<p>Listening comprehension is the ability to understand spoken language and respond correctly.</p>
+<ul>
+<li>Listen carefully to the speaker.</li>
+<li>Identify the main idea.</li>
+<li>Notice important facts and details.</li>
+<li>Understand the speaker's purpose.</li>
+<li>Answer questions based on what you hear.</li>
+</ul>
+<div class="example">Example: Listen to a short news report and write its main message.</div>
+</section>
+
+<section class="slide">
+<h2>3. Newspaper Reading</h2>
+<p>Newspaper reading improves vocabulary, reading skills and general awareness.</p>
+<ul>
+<li>Read headlines to understand the topic.</li>
+<li>Read articles carefully.</li>
+<li>Find the main idea and supporting details.</li>
+<li>Learn unfamiliar words.</li>
+<li>Write a short summary.</li>
+</ul>
+<div class="example">Tip: Read one English news article daily.</div>
+</section>
+
+<section class="slide">
+<h2>4. Parts of Speech</h2>
+<p>Parts of speech classify words according to their function in a sentence.</p>
+<ul>
+<li>Noun – name of a person, place or thing.</li>
+<li>Pronoun – replaces a noun.</li>
+<li>Verb – shows action or state.</li>
+<li>Adjective – describes a noun.</li>
+<li>Adverb – modifies a verb or adjective.</li>
+<li>Preposition – shows relationship.</li>
+<li>Conjunction – joins words or sentences.</li>
+<li>Interjection – expresses sudden feelings.</li>
+</ul>
+<div class="example">Example: Wow! She writes very neatly.</div>
+</section>
+
+<section class="slide">
+<h2>5. Sentence Structure</h2>
+<p>A sentence is a group of words that expresses a complete thought.</p>
+<ul>
+<li>Subject – tells who or what the sentence is about.</li>
+<li>Verb – tells the action or state.</li>
+<li>Object – receives the action.</li>
+<li>Sentences can be statements, questions, commands or exclamations.</li>
+</ul>
+<div class="example">Example: Ram (Subject) + plays (Verb) + cricket (Object).</div>
+</section>
+
+<section class="slide">
+<h2>6. Verb</h2>
+<p>A verb expresses an action, occurrence or state of being.</p>
+<ul>
+<li>Main verbs: read, write, play.</li>
+<li>Helping verbs: is, am, are, have, can.</li>
+<li>Regular verbs: work → worked.</li>
+<li>Irregular verbs: go → went.</li>
+<li>Use verbs according to the subject and tense.</li>
+</ul>
+<div class="example">Example: She is reading a book.</div>
+</section>
+
+<section class="slide">
+<h2>7. Additional Grammar Practice</h2>
+<ul>
+<li>Tenses – present, past and future.</li>
+<li>Articles – a, an and the.</li>
+<li>Prepositions – in, on, at, under.</li>
+<li>Subject-Verb Agreement – matching subject and verb.</li>
+<li>Vocabulary – learning new words and meanings.</li>
+</ul>
+<div class="example">Example: He goes to college every day.</div>
+</section>
+
+<section class="slide">
+<h1>THANK YOU!</h1>
+<p>Keep Learning. Keep Growing.</p>
+<div class="example">College Resource Hub</div>
+</section>
+
+<div class="controls">
+<button id="prev" onclick="change(-1)" disabled>← Previous</button>
+<button onclick="fullScreen()">⛶ Full Screen</button>
+<button id="next" onclick="change(1)">Next →</button>
+</div>
+
+<div class="bar"><div class="fill" id="fill"></div></div>
+
+<footer>Created by ADARSH MISHRA AND NITIN SINGH</footer>
+</div>
+
+<script>
+let current=0;
+const slides=document.querySelectorAll(".slide");
+
+function show(){
+slides.forEach(s=>s.classList.remove("active"));
+slides[current].classList.add("active");
+document.getElementById("number").textContent=
+(current+1)+" / "+slides.length;
+document.getElementById("prev").disabled=current===0;
+document.getElementById("next").disabled=current===slides.length-1;
+document.getElementById("fill").style.width=
+((current+1)/slides.length*100)+"%";
+}
+function change(step){
+current=Math.max(0,Math.min(slides.length-1,current+step));
+show();
+}
+function fullScreen(){
+if(!document.fullscreenElement)
+document.documentElement.requestFullscreen?.();
+else document.exitFullscreen?.();
+}
+document.addEventListener("keydown",e=>{
+if(e.key==="ArrowRight")change(1);
+if(e.key==="ArrowLeft")change(-1);
+});
+show();
+</script>
 </body>
-
 </html>

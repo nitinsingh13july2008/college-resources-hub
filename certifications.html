@@ -1,0 +1,722 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Certification Courses | College Resource Hub</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+    font-family:'Poppins',sans-serif;
+    background:#020817;
+    color:white;
+    overflow-x:hidden;
+}
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 10% 20%,#06447a55,transparent 35%),
+    radial-gradient(circle at 90% 70%,#006a7850,transparent 35%);
+    z-index:-2;
+    pointer-events:none;
+}
+
+/* BACKGROUND */
+.background span{
+    position:fixed;
+    width:6px;height:6px;
+    background:#00eaff;
+    border-radius:50%;
+    box-shadow:0 0 15px #00eaff;
+    animation:float 12s linear infinite;
+    opacity:.5;
+    pointer-events:none;
+    z-index:-1;
+}
+.background span:nth-child(1){left:10%;animation-duration:10s;}
+.background span:nth-child(2){left:30%;animation-duration:14s;}
+.background span:nth-child(3){left:50%;animation-duration:11s;}
+.background span:nth-child(4){left:75%;animation-duration:15s;}
+.background span:nth-child(5){left:90%;animation-duration:9s;}
+
+@keyframes float{
+    0%{top:110%;transform:translateX(0);}
+    50%{transform:translateX(60px);}
+    100%{top:-10%;transform:translateX(-50px);}
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 7%;
+    background:#020817cc;
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #00d9ff30;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+.logo{font-size:22px;font-weight:800;color:#00eaff;}
+nav a{
+    color:white;text-decoration:none;
+    border:1px solid #00d9ff80;
+    padding:9px 18px;border-radius:30px;
+    transition:.3s;
+}
+nav a:hover{
+    background:#00d9ff;color:#00101c;
+    box-shadow:0 0 20px #00d9ff;
+}
+
+/* HERO */
+.hero{text-align:center;padding:90px 20px 65px;}
+.hero-icon{font-size:55px;margin-bottom:15px;animation:pulse 2s infinite;}
+@keyframes pulse{
+    50%{transform:scale(1.12);text-shadow:0 0 30px #00eaff;}
+}
+.hero h1{font-size:clamp(30px,5vw,55px);font-weight:800;margin-bottom:15px;}
+.hero h1 span{color:#00eaff;text-shadow:0 0 20px #00d9ff60;}
+.hero p{
+    color:#a9bfd3;max-width:720px;
+    margin:auto;line-height:1.8;font-size:15px;
+}
+.hero-tag{
+    display:inline-block;margin-top:25px;
+    padding:10px 20px;border:1px solid #00eaff60;
+    border-radius:30px;color:#00eaff;
+    background:#00eaff0c;font-size:13px;
+}
+
+/* CATEGORY CARDS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(150px,1fr));
+    gap:20px;
+    padding:10px 7% 55px;
+}
+.stat{
+    text-align:center;
+    padding:23px 15px;
+    background:#ffffff09;
+    border:1px solid #00d9ff35;
+    border-radius:17px;
+    text-decoration:none;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+.stat h2{font-size:32px;margin-bottom:7px;}
+.stat p{color:#a9bfd3;font-size:13px;}
+.stat:hover,.stat.active{
+    transform:translateY(-7px);
+    border-color:#00eaff;
+    background:#00d9ff15;
+    box-shadow:0 0 25px #00d9ff25;
+}
+.stat.active p{color:#00eaff;}
+
+/* CERTIFICATE */
+.my-certificate{
+    padding:0 7% 75px;
+}
+.certificate-card{
+    max-width:950px;
+    margin:auto;
+    padding:30px;
+    background:linear-gradient(135deg,#09233b,#071629);
+    border:1px solid #00eaff70;
+    border-radius:22px;
+    display:flex;
+    align-items:center;
+    gap:25px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 0 30px #00d9ff15;
+}
+.certificate-card::before{
+    content:"";
+    position:absolute;
+    width:200px;height:200px;
+    border-radius:50%;
+    background:#00eaff12;
+    right:-70px;top:-90px;
+}
+.certificate-icon{
+    font-size:65px;
+    min-width:90px;
+    text-align:center;
+}
+.certificate-content{position:relative;z-index:1;}
+.certificate-content .small-tag{
+    display:inline-block;
+    color:#53ffb0;
+    border:1px solid #53ffb060;
+    background:#53ffb010;
+    border-radius:20px;
+    padding:5px 12px;
+    font-size:11px;
+    margin-bottom:12px;
+}
+.certificate-content h2{
+    font-size:23px;
+    margin-bottom:8px;
+}
+.certificate-content h2 span{color:#00eaff;}
+.certificate-content p{
+    color:#a9bfd3;
+    font-size:13px;
+    line-height:1.9;
+}
+.certificate-id{
+    color:#00eaff!important;
+    overflow-wrap:anywhere;
+    margin-top:5px;
+}
+.certificate-link{
+    display:inline-block;
+    margin-top:17px;
+    text-decoration:none;
+    background:linear-gradient(90deg,#00cfff,#00efc8);
+    color:#00121e;
+    font-weight:800;
+    font-size:12px;
+    padding:11px 20px;
+    border-radius:9px;
+    transition:.3s;
+}
+.certificate-link:hover{
+    transform:scale(1.04);
+    box-shadow:0 0 20px #00d9ff70;
+}
+
+/* SEARCH */
+.search-section{
+    max-width:850px;
+    margin:0 auto 35px;
+    padding:0 20px;
+}
+.search-box{
+    width:100%;padding:16px 22px;
+    background:#07172b;
+    border:1px solid #00d9ff60;
+    border-radius:35px;color:white;
+    font-family:inherit;outline:none;font-size:14px;
+}
+.search-box:focus{box-shadow:0 0 20px #00d9ff30;border-color:#00eaff;}
+.search-box::placeholder{color:#8295a9;}
+
+/* FILTERS */
+.filters{
+    display:flex;justify-content:center;
+    flex-wrap:wrap;gap:12px;
+    padding:0 15px 40px;
+}
+.filter-btn{
+    padding:10px 19px;
+    border:1px solid #00d9ff55;
+    background:#ffffff08;color:white;
+    border-radius:25px;cursor:pointer;
+    font-family:inherit;transition:.3s;
+}
+.filter-btn:hover,.filter-btn.active{
+    background:linear-gradient(90deg,#00cfff,#00eacb);
+    color:#00121e;border-color:transparent;font-weight:700;
+}
+
+/* COURSES */
+.section-title{text-align:center;margin-bottom:35px;}
+.section-title h2{font-size:30px;}
+.section-title h2 span{color:#00eaff;}
+.section-title p{color:#91a8be;font-size:13px;margin-top:8px;}
+
+.courses{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    padding:0 7% 80px;
+}
+.course-card{
+    position:relative;padding:28px;
+    background:linear-gradient(145deg,#ffffff10,#ffffff04);
+    border:1px solid #00d9ff35;
+    border-radius:20px;transition:.35s;
+    overflow:hidden;
+}
+.course-card::before{
+    content:"";position:absolute;
+    width:120px;height:120px;
+    background:#00d9ff12;border-radius:50%;
+    top:-50px;right:-40px;
+}
+.course-card:hover{
+    transform:translateY(-9px);
+    border-color:#00eaff;
+    box-shadow:0 0 30px #00d9ff25;
+}
+.course-icon{font-size:38px;margin-bottom:18px;}
+.course-card h3{font-size:19px;margin-bottom:10px;}
+.course-card p{
+    color:#a9bfd3;font-size:13px;
+    line-height:1.7;min-height:65px;
+}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+.tag{
+    font-size:10px;padding:6px 10px;
+    border-radius:20px;background:#00d9ff15;
+    color:#00eaff;border:1px solid #00d9ff35;
+}
+.tag.free{
+    color:#53ffb0;background:#00ff9812;
+    border-color:#00ff9840;
+}
+.enroll{
+    display:block;text-align:center;
+    text-decoration:none;padding:12px;
+    border-radius:10px;
+    background:linear-gradient(90deg,#00cfff,#00efc8);
+    color:#00121e;font-size:13px;
+    font-weight:800;transition:.3s;
+}
+.enroll:hover{box-shadow:0 0 20px #00d9ff70;transform:scale(1.03);}
+.no-results{
+    display:none;text-align:center;
+    color:#a9bfd3;padding:30px;grid-column:1/-1;
+}
+
+/* INFO */
+.info{
+    max-width:950px;margin:0 auto 75px;
+    padding:25px;border:1px solid #00d9ff40;
+    background:#00d9ff0b;border-radius:18px;
+    text-align:center;
+}
+.info h3{color:#00eaff;margin-bottom:10px;}
+.info p{color:#a9bfd3;font-size:13px;line-height:1.8;}
+
+/* FOOTER */
+footer{
+    padding:30px 20px;text-align:center;
+    background:#010611;border-top:1px solid #00d9ff25;
+    color:#829bb2;font-size:12px;
+}
+footer span{color:#00eaff;}
+
+#topBtn{
+    position:fixed;bottom:22px;right:22px;
+    width:45px;height:45px;border:none;
+    border-radius:50%;background:#00d9ff;
+    color:#00121e;font-size:22px;
+    cursor:pointer;display:none;z-index:99;
+}
+
+@media(max-width:800px){
+    .stats{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+    nav{padding:17px 5%;}
+    .logo{font-size:17px;}
+    nav a{font-size:11px;padding:8px 12px;}
+    .hero{padding:65px 18px 45px;}
+    .stats{gap:12px;padding-left:5%;padding-right:5%;}
+    .stat{padding:18px 10px;}
+    .courses{padding:0 5% 55px;gap:18px;}
+    .course-card{padding:23px;}
+    .section-title h2{font-size:25px;}
+    .certificate-card{flex-direction:column;text-align:center;padding:25px 18px;}
+    .certificate-content h2{font-size:20px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+<span></span><span></span><span></span>
+<span></span><span></span>
+</div>
+
+<nav>
+    <div class="logo">🎓 CRH</div>
+    <a href="index.html">← Back to Home</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-icon">🏆</div>
+    <h1>Free <span>Certification</span> Courses</h1>
+    <p>
+        Learn new skills, explore new opportunities and earn certificates
+        from online learning platforms. Start your learning journey today!
+    </p>
+    <div class="hero-tag">
+        🚀 LEARN FREE • GAIN SKILLS • EARN CERTIFICATES
+    </div>
+</section>
+
+<!-- CLICKABLE CATEGORIES -->
+<section class="stats">
+
+    <a href="#courseList" class="stat active" data-category="programming">
+        <h2>💻</h2>
+        <p>Programming</p>
+    </a>
+
+    <a href="#courseList" class="stat" data-category="ai">
+        <h2>🤖</h2>
+        <p>Artificial Intelligence</p>
+    </a>
+
+    <a href="#courseList" class="stat" data-category="web">
+        <h2>🌐</h2>
+        <p>Web Development</p>
+    </a>
+
+    <a href="#courseList" class="stat" data-category="all">
+        <h2>🎓</h2>
+        <p>Online Learning</p>
+    </a>
+
+</section>
+
+<!-- MY CERTIFICATE -->
+<section class="my-certificate">
+
+    <div class="section-title">
+        <h2>My <span>Certificate</span></h2>
+        <p>A learning achievement from LearnTube.ai</p>
+    </div>
+
+    <div class="certificate-card">
+
+        <div class="certificate-icon">🏅</div>
+
+        <div class="certificate-content">
+
+            <span class="small-tag">✓ CERTIFICATE OF COMPLETION</span>
+
+            <h2>LearnTube.ai – <span>String</span></h2>
+
+            <p>
+                This certificate is presented to <strong>Nitin Kumar</strong>
+                for successfully completing the String course.
+                <br>
+                <strong>In association with:</strong> Samridh Amla
+                <br>
+                <strong>Completion date:</strong> 28/05/2026
+            </p>
+
+            <p class="certificate-id">
+                Certificate ID: STR-M-2-2182-1137558
+            </p>
+
+            <a class="certificate-link"
+               href="https://learntube.ai/"
+               target="_blank"
+               rel="noopener">
+                Visit LearnTube.ai ↗
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- SEARCH -->
+<div class="search-section">
+    <input
+    type="text"
+    id="searchInput"
+    class="search-box"
+    placeholder="🔍 Search courses, skills or platforms...">
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+
+    <button class="filter-btn active" data-category="all">All Courses</button>
+    <button class="filter-btn" data-category="programming">Programming</button>
+    <button class="filter-btn" data-category="web">Web Development</button>
+    <button class="filter-btn" data-category="ai">AI & ML</button>
+    <button class="filter-btn" data-category="data">Data Science</button>
+    <button class="filter-btn" data-category="other">Other Skills</button>
+
+</div>
+
+<!-- COURSE LIST -->
+<section>
+
+<div class="section-title">
+    <h2>Explore <span>Courses</span></h2>
+    <p id="categoryMessage">Choose a course and start learning today.</p>
+</div>
+
+<div class="courses" id="courseList">
+
+    <!-- PROGRAMMING -->
+
+    <div class="course-card" data-category="programming">
+        <div class="course-icon">🐍</div>
+        <h3>Python Programming</h3>
+        <p>Learn Python fundamentals, programming logic and practical coding through beginner-friendly lessons.</p>
+        <div class="tags">
+            <span class="tag free">Free learning</span>
+            <span class="tag">Beginner</span>
+            <span class="tag">Python</span>
+        </div>
+        <a class="enroll" href="https://www.freecodecamp.org/learn/scientific-computing-with-python/" target="_blank" rel="noopener">Explore Course ↗</a>
+    </div>
+
+    <div class="course-card" data-category="programming">
+        <div class="course-icon">💻</div>
+        <h3>C Programming</h3>
+        <p>Understand programming fundamentals, C syntax, loops, functions and problem solving.</p>
+        <div class="tags">
+            <span class="tag free">Free learning</span>
+            <span class="tag">Beginner</span>
+            <span class="tag">C</span>
+        </div>
+        <a class="enroll" href="https://www.learn-c.org/" target="_blank" rel="noopener">Explore Course ↗</a>
+    </div>
+
+    <div class="course-card" data-category="programming">
+        <div class="course-icon">☕</div>
+        <h3>Java Programming</h3>
+        <p>Explore Java programming, object-oriented concepts and coding fundamentals.</p>
+        <div class="tags">
+            <span class="tag free">Free learning</span>
+            <span class="tag">Beginner</span>
+            <span class="tag">Java</span>
+        </div>
+        <a class="enroll" href="https://dev.java/learn/" target="_blank" rel="noopener">Explore Course ↗</a>
+    </div>
+
+    <!-- WEB DEVELOPMENT -->
+
+    <div class="course-card" data-category="web">
+        <div class="course-icon">🌐</div>
+        <h3>Responsive Web Design</h3>
+        <p>Learn HTML, CSS, responsive layouts and build websites through practical projects.</p>
+        <div class="tags">
+            <span class="tag free">Free learning</span>
+            <span class="tag">HTML & CSS</span>
+            <span class="tag">Projects</span>
+        </div>
+        <a class="enroll" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" target="_blank" rel="noopener">Explore Course ↗</a>
+    </div>
+
+    <div class="course-card" data-category="web">
+        <div class="course-icon">⚡</div>
+        <h3>JavaScript</h3>
+        <p>Learn JavaScript basics, functions, DOM manipulation and interactive web development.</p>
+        <div class="tags">
+            <span class="tag free">Free learning</span>
+            <span class="tag">JavaScript</span>
+        </div>
+        <a class="enroll" href="https://javascript.info/" target="_blank" rel="noopener">Explore Course ↗</a>
+    </div>
+
+    <!-- ARTIFICIAL INTELLIGENCE -->
+
+    <div class="course-card" data-category="ai">
+        <div class="course-icon">🤖</div>
+        <h3>Elements of AI</h3>
+        <p>Discover artificial intelligence, its applications, basic concepts and real-world impact.</p>
+        <div class="tags">
+            <span class="tag free">Free course</span>
+            <span class="tag">AI</span>
+            <span class="tag">Beginner</span>
+        </div>
+        <a class="enroll" href="https://www.elementsofai.com/" target="_blank" rel="noopener">Explore Course ↗</a>
+    </div>
+
+    <div class="course-card" data-category="ai">
+        <div class="course-icon">🧠</div>
+        <h3>Machine Learning</h3>
+        <p>Understand machine learning concepts, models and introductory AI techniques.</p>
+        <div class="tags">
+            <span class="tag free">Free learning</span>
+            <span class="tag">Machine Learning</span>
+        </div>
+        <a class="enroll" href="https://developers.google.com/machine-learning/crash-course" target="_blank" rel="noopener">Explore Course ↗</a>
+    </div>
+
+    <!-- DATA SCIENCE -->
+
+    <div class="course-card" data-category="data">
+        <div class="course-icon">📊</div>
+        <h3>Data Science</h3>
+        <p>Learn data analysis, Python tools, statistics and introductory data science skills.</p>
+        <div class="tags">
+            <span class="tag free">Free learning</span>
+            <span class="tag">Data Science</span>
+        </div>
+        <a class="enroll" href="https://www.kaggle.com/learn" target="_blank" rel="noopener">Explore Course ↗</a>
+    </div>
+
+    <!-- OTHER SKILLS -->
+
+    <div class="course-card" data-category="other">
+        <div class="course-icon">🔐</div>
+        <h3>Cybersecurity</h3>
+        <p>Explore cybersecurity fundamentals, digital safety and introductory security concepts.</p>
+        <div class="tags">
+            <span class="tag free">Free learning</span>
+            <span class="tag">Security</span>
+        </div>
+        <a class="enroll" href="https://www.netacad.com/" target="_blank" rel="noopener">Explore Course ↗</a>
+    </div>
+
+    <div class="course-card" data-category="other">
+        <div class="course-icon">📈</div>
+        <h3>Digital Marketing</h3>
+        <p>Explore online marketing, search engines, digital promotion and business fundamentals.</p>
+        <div class="tags">
+            <span class="tag free">Free learning</span>
+            <span class="tag">Marketing</span>
+        </div>
+        <a class="enroll" href="https://skillshop.withgoogle.com/" target="_blank" rel="noopener">Explore Course ↗</a>
+    </div>
+
+    <div class="course-card" data-category="other">
+        <div class="course-icon">🗣️</div>
+        <h3>Communication Skills</h3>
+        <p>Improve communication, presentation, teamwork and professional skills.</p>
+        <div class="tags">
+            <span class="tag free">Free learning</span>
+            <span class="tag">Soft Skills</span>
+        </div>
+        <a class="enroll" href="https://www.open.edu/openlearn/" target="_blank" rel="noopener">Explore Courses ↗</a>
+    </div>
+
+    <div class="no-results" id="noResults">
+        😕 No matching courses found. Try another search.
+    </div>
+
+</div>
+</section>
+
+<!-- INFORMATION -->
+<div class="info">
+    <h3>🎓 Important Information</h3>
+    <p>
+        Course access, assessments and certificates may have different
+        conditions on each platform. Some platforms offer free learning
+        but charge for certificates. Always check the official course
+        details before enrolling. College Resource Hub does not issue
+        these third-party certificates.
+    </p>
+</div>
+
+<footer>
+    © 2026 College Resource Hub
+    <br><br>
+    <span>Learn • Explore • Grow 🚀</span>
+    <br>
+    Empowering students with learning opportunities.
+</footer>
+
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const courseCards = document.querySelectorAll(".course-card");
+const noResults = document.getElementById("noResults");
+const categoryCards = document.querySelectorAll(".stat");
+const categoryMessage = document.getElementById("categoryMessage");
+
+let activeCategory = "all";
+
+function filterCourses(){
+
+    const searchValue = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    courseCards.forEach(card => {
+
+        const category = card.dataset.category;
+        const content = card.innerText.toLowerCase();
+
+        const categoryMatch =
+            activeCategory === "all" ||
+            category === activeCategory;
+
+        const searchMatch = content.includes(searchValue);
+
+        if(categoryMatch && searchMatch){
+            card.style.display = "block";
+            visibleCount++;
+        }else{
+            card.style.display = "none";
+        }
+    });
+
+    noResults.style.display = visibleCount === 0 ? "block" : "none";
+
+    if(activeCategory === "all"){
+        categoryMessage.textContent = "Showing all available learning categories.";
+    }else{
+        const selectedButton = document.querySelector(
+            '.filter-btn[data-category="' + activeCategory + '"]'
+        );
+        categoryMessage.textContent =
+            "Showing " + (selectedButton ? selectedButton.textContent : activeCategory) + " courses.";
+    }
+}
+
+function setCategory(category){
+
+    activeCategory = category;
+
+    filterButtons.forEach(button => {
+        button.classList.toggle(
+            "active",
+            button.dataset.category === category
+        );
+    });
+
+    categoryCards.forEach(card => {
+        card.classList.toggle(
+            "active",
+            card.dataset.category === category
+        );
+    });
+
+    filterCourses();
+}
+
+searchInput.addEventListener("input",filterCourses);
+
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        setCategory(button.dataset.category);
+    });
+});
+
+categoryCards.forEach(card => {
+    card.addEventListener("click", () => {
+        setCategory(card.dataset.category);
+    });
+});
+
+// BACK TO TOP
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+});
+
+// Initial display
+setCategory("all");
+</script>
+
+</body>
+</html>

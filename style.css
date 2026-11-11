@@ -4543,3 +4543,10 @@ body.light-mode footer {
     visibility: visible !important;
     opacity: 1 !important;
 }
+/* ENTER BUTTON KO UPAR LANE KA FIX */
+.hacker-enter {
+    margin-top: -25px !important;
+    transform: translateY(-20px) !important;
+    position: relative !important;
+    z-index: 10 !important;
+}

@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>College Resource Hub | ADARSH MISHRA AND NITIN SINGH</title>
+<title>College Resource Hub | ADARSH MISHRA AND PRABHAKAR DUBEY AND NITIN SINGH</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -643,6 +642,71 @@ body.light-mode .contact-card {
 body.light-mode .contact-card h3 {color:#0f172a;}
 body.light-mode .contact-card p {color:#64748b;}
 
+
+/* ================= INTRO TEAM DP ================= */
+.intro-team {
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:clamp(14px,3vw,34px);
+    width:100%;
+    margin:24px auto 8px;
+}
+.intro-team-member {
+    width:clamp(112px,18vw,155px);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+.intro-team-photo,
+.intro-team-missing {
+    width:clamp(76px,11vw,100px);
+    height:clamp(76px,11vw,100px);
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #38bdf8;
+    box-shadow:0 0 18px rgba(56,189,248,.35),0 0 35px rgba(37,99,235,.20);
+    margin-bottom:11px;
+}
+.intro-team-missing {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px;
+    box-sizing:border-box;
+    color:#fbbf24;
+    background:rgba(245,158,11,.10);
+    border:2px dashed #f59e0b;
+    font-size:clamp(10px,1.5vw,13px);
+    font-weight:900;
+    letter-spacing:1px;
+    overflow-wrap:anywhere;
+}
+.intro-team-name {
+    color:#f8fafc;
+    font-size:clamp(10px,1.5vw,14px);
+    font-weight:900;
+    letter-spacing:.7px;
+    line-height:1.4;
+}
+.intro-team-role {
+    color:#38bdf8;
+    font-size:clamp(8px,1.1vw,10px);
+    font-weight:800;
+    letter-spacing:.8px;
+    line-height:1.5;
+    margin-top:4px;
+}
+@media(max-width:480px) {
+    .intro-team {gap:12px;margin-top:18px;}
+    .intro-team-member {width:calc(33.333% - 10px);min-width:95px;}
+    .intro-team-photo,.intro-team-missing {width:70px;height:70px;}
+    .intro-team-name {font-size:10px;}
+    .intro-team-role {font-size:8px;letter-spacing:.3px;}
+}
+
 /* ================= RESPONSIVE ================= */
 @media(max-width:1050px) {
     .subjects-container {grid-template-columns:repeat(2,1fr);}
@@ -729,8 +793,24 @@ body.light-mode .contact-card p {color:#64748b;}
                 <span class="title-sub">RESOURCE HUB</span>
             </h1>
             <div class="hacker-divider"></div>
-            <div class="founder-label">FOUNDER &amp; CREATOR</div>
-            <div class="hacker-name">ADARSH MISHRA AND NITIN SINGH</div>
+            <div class="founder-label">MEET THE CORE TEAM</div>
+            <div class="intro-team">
+                <div class="intro-team-member">
+                    <img src="nitin.png" alt="Nitin Singh DP" class="intro-team-photo">
+                    <div class="intro-team-name">NITIN SINGH</div>
+                    <div class="intro-team-role">FOUNDER &amp; CREATOR</div>
+                </div>
+                <div class="intro-team-member">
+                    <div class="intro-team-missing">MISSING</div>
+                    <div class="intro-team-name">ADARSH MISHRA</div>
+                    <div class="intro-team-role">DESIGNER &amp; RESEARCHER</div>
+                </div>
+                <div class="intro-team-member">
+                    <img src="prabhakar.png" alt="Prabhakar Dubey DP" class="intro-team-photo">
+                    <div class="intro-team-name">PRABHAKAR DUBEY</div>
+                    <div class="intro-team-role">MAINTAINER &amp; NEW UPDATES</div>
+                </div>
+            </div>
         </div>
 
         <div class="risk-text"><span>⚠</span> ENTER WEBSITE AT YOUR OWN RISK <span>⚠</span></div>
@@ -818,8 +898,7 @@ body.light-mode .contact-card p {color:#64748b;}
             <p>HTML, CSS, web fundamentals, practical questions and resources.</p>
             <a href="web-resources.html">View Resources</a>
         </div>
-
-        <div class="subject-card">
+                <div class="subject-card">
             <div class="card-shine"></div>
             <div class="subject-number">SUBJECT 05</div>
             <div class="subject-icon">🤖</div>
@@ -972,7 +1051,7 @@ body.light-mode .contact-card p {color:#64748b;}
         <br>
         <p>The goal is simple — make studying easier, faster and more organized for every student.</p>
         <br>
-        <p>Created with ❤️ by <strong>ADARSH MISHRA AND Nitin Singh</strong></p>
+        <p>Created with ❤️ by <strong>ADARSH MISHRA AND Nitin Singh AND PRABHAKAR DUBEY</strong></p>
     </div>
 </section>
 
@@ -1040,7 +1119,7 @@ body.light-mode .contact-card p {color:#64748b;}
 <!-- ================= FOOTER ================= -->
 <footer>
     <p>© 2026 <strong>College Resource Hub</strong></p>
-    <p>Created by <strong>ADARSH MISHRA AND Nitin Singh</strong></p>
+    <p>Created by <strong>ADARSH MISHRA AND Nitin Singh and PRABHAKAR DUBEY</strong></p>
     <p>
         <a href="certifications.html">Free Certification Courses</a>
         &nbsp; | &nbsp;
